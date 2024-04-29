@@ -10,3 +10,5 @@ const cards =[
     {id: 9, name: "Baby Dragon", elixir: 4},
     {id: 10, name: "Musketeer", elixir: 4}
     ];
+
+    //algo
