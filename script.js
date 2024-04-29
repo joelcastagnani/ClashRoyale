@@ -10,3 +10,15 @@ const cards =[
     {id: 9, name: "Baby Dragon", elixir: 4},
     {id: 10, name: "Musketeer", elixir: 4}
     ];
+
+//Show cards list
+function showCards(){
+    let cardsList = "Lista de cartas disponibles: \n";
+    cards.forEach(card => {
+        //cardsList += `${card.id}: ${card.name} - ${card.elixir}\n`;
+        cardsList += card.id + " " + card.name + " " + card.elixir + "\n";
+    });
+    alert(cardsList);
+}
+
+showCards();
