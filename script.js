@@ -24,16 +24,21 @@ function showCards(arrayObject) {
     });
     return cardsList;
 }//Show cards list
-function addCard(idCard, deck) {
-    const card = cards.find(ca => ca.id === idCard);
+function addCard(idCard, buildedDeck) {
     let text = "";
-    if (card) {
-        deck.push(card);
-        text = `\n*${card.name} ha sido agregado correctamente a su mazo.`;
+    if (buildedDeck.length < 8) {
+        const card = cards.find(ca => ca.id === idCard);
+        if (card) {
+            buildedDeck.push(card);
+            text = `\n*${card.name} ha sido agregado correctamente a su mazo.`;
+        } else {
+            text = "Producto no encontrado";
+        }
     } else {
-        text = "Producto no encontrado";
+        text = "Debe eliminar al menos 1 carta de su mazo para sumar una (Ya completo las 8)";
     }
-    return text;
+    alert(text);
+    return buildedDeck;
 }//Add cards to your deck
 function deleteCard(idCard, deck) {
     const index = cards.findIndex(ca => ca.id === idCard);
@@ -45,25 +50,26 @@ function deleteCard(idCard, deck) {
     } else {
         text = "Producto no encontrado en el mazo";
     }
-    return text;
+    alert(text);
+    return deck;
 }//Delete one card from your deck
-function buildDeck(arrayObject, deck) {
+function buildDeck() {
+    let buildedDeck = [];
     let i = 0;
-    let currentDeck = "";
     while (i < 8) {
-        let id = parseInt(prompt("Mazo actual:\n" + showCards(deck) + "\nIngrese el id de la carta numero " + (i+1) + ":"));
-        currentDeck += addCard(id, deck);
+        let id = parseInt(prompt("Mazo actual:\n" + showCards(buildedDeck) + "\nIngrese el id de la carta numero " + (i + 1) + ":"));
+        buildedDeck = addCard(id, buildedDeck);
         i++;
     }
-    return currentDeck;
+    return buildedDeck;
 }//Build an 8 cards deck
 
 
 /* Test Board */
-const deck = [];
 //alert(showCard(cards[5]));
-//alert(addCard(deck));
 //alert(showCards(deck));
-//alert(deleteCard(deck));
-//alert(buildDeck(cards, deck));
-//alert(deleteCard(2, deck));
+//let deck = buildDeck();
+//deck = deleteCard(parseInt(prompt("Ingrese el ID de la carta que desea eliminar: ")), deck);
+//deck = addCard(parseInt(prompt("Ingrese el ID de la carta que desea agregar: ")), deck);
+
+
