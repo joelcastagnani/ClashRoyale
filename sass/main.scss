@@ -21,13 +21,14 @@ body {
 }
 
 .carta {
-    position: relative;
+    position:relative;
     height: 320px;
     width: 240px;
     margin: 2em;
     transition: 0.8s cubic-bezier(0.215, 0.610, 0.355, 1);
     margin: 2em auto;
     cursor: pointer;
+    //scale: 50%;
 
     .carta__cara {
         position: absolute;
@@ -219,7 +220,7 @@ body {
 
 }/**** Carta Epica ***/
 .carta_legendaria {
-    height: 325px;
+    height: 325px;//ESTO ESTABA EN 325
     border: 0;
 
     .carta__cara {
@@ -459,11 +460,6 @@ body {
         }
     }
 }
-
-
-
-
-
 
 
 
