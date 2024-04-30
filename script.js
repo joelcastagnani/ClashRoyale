@@ -68,12 +68,21 @@ function buildDeck() {
     return buildedDeck;
 }//Build an 8 cards deck
 
+/* On click functions */
+function clickShowCards() {
+    alert(showCards(cards));
+}
+const boton = document.getElementById("card");
+boton.onclick = clickShowCards;
+
+
+
 //Principal function
 function mainFunction() {
     let deck = [];
     let opcion = 0;
 
-    while ((opcion = parseInt(prompt("Menu de opciones:\n" + "1- Mostrar lista de cartas\n" + "2- Mostrar mi mazo\n" + "3- Armar mi mazo de 8 cartas\n" + "4- Eliminar una carta\n" + "5- Agregar una carta\n" + "0- Salir \n" + "Ingrese una opcion: ") )) !== 0) {
+    while ((opcion = parseInt(prompt("Menu de opciones:\n" + "1- Mostrar lista de cartas\n" + "2- Mostrar mi mazo\n" + "3- Armar mi mazo de 8 cartas\n" + "4- Eliminar una carta\n" + "5- Agregar una carta\n" + "0- Salir \n" + "Ingrese una opcion: "))) !== 0) {
         console.log("entro al while");
         switch (opcion) {
             case 1:
@@ -102,7 +111,7 @@ function mainFunction() {
         }
     }
 
-    
+
 }
 
 
@@ -119,5 +128,37 @@ function mainFunction() {
 //let deck = buildDeck();
 //deck = deleteCard(parseInt(prompt("Ingrese el ID de la carta que desea eliminar: ")), deck);
 //deck = addCard(parseInt(prompt("Ingrese el ID de la carta que desea agregar: ")), deck);
-mainFunction();
+
+
+
+
+
+//mainFunction();
+
+
+
+
+const $cartas = document.querySelectorAll(".carta");
+for (let i = 0; i < $cartas.length; i++) {
+    let elemento = $cartas[i];
+    elemento.setAttribute('id', `carta${i}`);
+
+    let idCarta = document.getElementById(elemento.id);
+    idCarta.addEventListener("click", () => {
+        idCarta.classList.toggle("vuelta");
+    });
+}
+
+// Swiper init
+var swiper = new Swiper('.slider-cartas', {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    pagination: {
+        el: '.slider-cartas__paginacion',
+        clickable: true,
+        renderBullet: function (index, className) {
+            return '<span class="' + className + '">' + (index + 1) + '</span>';
+        },
+    }
+});
 
