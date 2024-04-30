@@ -18,10 +18,14 @@ function showCard(card) {
 function showCards(arrayObject) {
     let cardsList = "";
     let i = 1;
-    arrayObject.forEach(card => {
-        cardsList += "\n" + i + "- " + showCard(card);
-        i++;
-    });
+    if (arrayObject.length > 0) {
+        arrayObject.forEach(card => {
+            cardsList += "\n" + i + "- " + showCard(card);
+            i++;
+        });
+    } else {
+        cardsList = "-----Su mazo esta vacio-----";
+    }
     return cardsList;
 }//Show cards list
 function addCard(idCard, buildedDeck) {
@@ -48,7 +52,7 @@ function deleteCard(idCard, deck) {
         const deletedCard = deck.splice(index, 1)[0];
         text = (`${card.name} ha sido eliminado correctamente de su mazo.`);
     } else {
-        text = "Producto no encontrado en el mazo";
+        text = "Carta no encontrado en el mazo";
     }
     alert(text);
     return deck;
@@ -64,6 +68,50 @@ function buildDeck() {
     return buildedDeck;
 }//Build an 8 cards deck
 
+//Principal function
+function mainFunction() {
+    let deck = [];
+    let opcion = 0;
+
+    while ((opcion = parseInt(prompt("Menu de opciones:\n" + "1- Mostrar lista de cartas\n" + "2- Mostrar mi mazo\n" + "3- Armar mi mazo de 8 cartas\n" + "4- Eliminar una carta\n" + "5- Agregar una carta\n" + "0- Salir \n" + "Ingrese una opcion: ") )) !== 0) {
+        console.log("entro al while");
+        switch (opcion) {
+            case 1:
+                alert(showCards(cards));
+                break;
+            case 2:
+                alert(showCards(deck));
+                break;
+            case 3:
+                deck = buildDeck();
+                alert(showCards(deck));
+                break;
+            case 4:
+                let id4 = 0;
+                deck = deleteCard(id4 = parseInt(prompt("Ingrese el ID de la carta que desea eliminar: ")), deck);
+                alert(showCards(deck));
+                break;
+            case 5:
+                let id5 = 0;
+                deck = addCard((id5 = parseInt(prompt("Ingrese el ID de la carta que quiere agregar:"))), deck);
+                alert(showCards(deck));
+                break;
+            default:
+                console.log("La opción no es ni 1, ni 2, ni 3");
+                break;
+        }
+    }
+
+    
+}
+
+
+
+
+
+
+
+
 
 /* Test Board */
 //alert(showCard(cards[5]));
@@ -71,5 +119,5 @@ function buildDeck() {
 //let deck = buildDeck();
 //deck = deleteCard(parseInt(prompt("Ingrese el ID de la carta que desea eliminar: ")), deck);
 //deck = addCard(parseInt(prompt("Ingrese el ID de la carta que desea agregar: ")), deck);
-
+mainFunction();
 
