@@ -11,9 +11,9 @@ html {
 }
 
 body {
-  min-width: 600px;
+  background-color: #0d1117;
+  min-width: 450px;
   width: 70%;
-  border: 2px solid black;
   font-size: 16px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
 }
@@ -326,19 +326,70 @@ body {
     bottom: 70px;
   }
 }
-.navbar {
+.navbar1 {
   display: flex;
   justify-content: start;
-  background-color: #0d1117;
+  background-color: #010409;
+  display: flex;
+  align-items: center;
 }
-.navbar__icon {
+.navbar1__icon {
   color: white;
-  font-size: 35px;
-  padding: 5px;
+  font-size: 30px;
+  padding: 0.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
-.navbar__span {
+.navbar1__span-contenedor {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  padding-top: 2px;
+  padding-bottom: 5px;
+  padding-left: 7px;
+  padding-right: 7px;
+}
+.navbar1__span-contenedor:hover {
+  background-color: #292e36;
+  transition: 0.1s;
+}
+.navbar1__span-contenedor__span1 {
+  color: rgba(255, 255, 255, 0.829);
+  margin-right: 0.3rem;
+}
+.navbar1__span-contenedor__span2 {
+  color: rgba(255, 255, 255, 0.397);
+  font-size: 13px;
+}
+
+.navbar2 {
+  background-color: #010409;
+  display: flex;
+  justify-content: start;
+  padding-left: 0.5rem;
+}
+.navbar2__button {
+  display: flex;
+  padding-top: 0.3rem;
+  padding-bottom: 0.35rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  border-radius: 5px;
   color: white;
-  margin-right: 1rem;
+  background-color: #010409;
+  font-size: 13.5px;
+  margin-bottom: 0.2rem;
+}
+.navbar2__button_icon {
+  color: rgba(255, 255, 255, 0.514);
+}
+.navbar2__button_span {
+  padding-left: 5px;
+}
+.navbar2__button:hover {
+  background-color: #292e36;
+  transition: 0.1s;
+  scale: 110%;
 }
 
 /*# sourceMappingURL=styles.css.map */
