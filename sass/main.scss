@@ -2,33 +2,42 @@
     clip-path: polygon(50% 0%, 100% 10%, 100% 50%, 100% 90%, 50% 100%, 0% 90%, 0% 50%, 0% 10%);
     -webkit-clip-path: polygon(50% 0%, 100% 10%, 100% 50%, 100% 90%, 50% 100%, 0% 90%, 0% 50%, 0% 10%);
 }
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+
+    font-family: "Space Mono", monospace;
+    //font-family: "Anek Devanagari", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
-html{
+
+html {
     display: flex;
     justify-content: center;
     background-color: #1b2130;
 }
+
 body {
     background-color: #0d1117;
     min-width: 450px;
     width: 70%;
-    font-size: 16px;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
 }
 
+
+/**** Base Carta ****/
 .carta {
-    position:relative;
-    height: 320px;
-    width: 240px;
+    position: relative;
+    // height: 320px;
+    // width: 240px;
+    height: 160px;
+    width: 120px;
     margin: 2em;
     transition: 0.8s cubic-bezier(0.215, 0.610, 0.355, 1);
     margin: 2em auto;
     cursor: pointer;
-    //scale: 50%;
 
     .carta__cara {
         position: absolute;
@@ -58,7 +67,7 @@ body {
             padding: 0.8em;
             line-height: 0;
             z-index: 9999;
-            font-size: 20px;
+            font-size: 15px;
             color: white;
             border-radius: 50px;
             border: 3px solid #ab1a94;
@@ -117,8 +126,7 @@ body {
                 padding: 0.2em 0em;
                 margin: 0;
                 text-align: center;
-                letter-spacing: 1.4px;
-                font-size: 1.6em;
+                font-size: 20px;
                 font-weight: 400;
                 text-shadow: rgba(0, 0, 0, 0.582) 2px 3px;
             }
@@ -167,7 +175,9 @@ body {
     &:hover .carta__cara_delantera .carta__ilustracion {
         transform: scale(1.1);
     }
-}/**** Base Carta ****/
+}
+
+/**** Carta Comun **/
 .carta_comun {
 
     .carta__cara_delantera {
@@ -181,7 +191,9 @@ body {
             color: #9ddcfa;
         }
     }
-}/**** Carta Comun **/
+}
+
+/**** Carta Especial ***/
 .carta_especial {
 
     .carta__cara {
@@ -199,7 +211,9 @@ body {
             color: #f8e5a6;
         }
     }
-}/**** Carta Especial ***/
+}
+
+/**** Carta Epica ***/
 .carta_epica {
 
     .carta__cara {
@@ -218,9 +232,11 @@ body {
         }
     }
 
-}/**** Carta Epica ***/
+}
+
+/**** Carta Legendaria ***/
 .carta_legendaria {
-    height: 325px;//ESTO ESTABA EN 325
+    height: 162.5px;
     border: 0;
 
     .carta__cara {
@@ -274,6 +290,7 @@ body {
                 padding-bottom: 0.5em;
 
                 span {
+                    width: 100%;
                     position: relative;
                     display: inline-block;
                     color: #000;
@@ -313,7 +330,9 @@ body {
             background: radial-gradient(circle, #202126 0%, #243453 47%, rgba(21, 26, 31, 0.959) 100%);
         }
     }
-}/**** Carta Legendaria ***/
+}
+
+/**** Rotacion de la carta ****/
 .carta.vuelta {
 
     .carta__cara_delantera {
@@ -324,13 +343,17 @@ body {
     .carta__cara_trasera {
         transform: rotateY(0deg);
     }
-}/**** Rotacion de la carta ****/
+}
+
+
+
 
 @media (max-width: 575px) {
     .cartas-contenedor {
         transform: scale(0.9);
     }
 }
+
 @keyframes resplandor_carta_especial {
     0% {
         box-shadow: 1px 1px 6px 6px #ee8523f0;
@@ -344,6 +367,7 @@ body {
         box-shadow: 1px 1px 6px 6px #ee8523f0;
     }
 }
+
 @keyframes resplandor_carta_epica {
     0% {
         box-shadow: 1px 1px 6px 6px rgba(166, 45, 164, 0.918);
@@ -357,6 +381,7 @@ body {
         box-shadow: 1px 1px 6px 6px rgba(166, 45, 164, 0.918);
     }
 }
+
 @keyframes resplandor_carta_legendaria {
     0% {
         background-position: 0% 82%;
@@ -370,6 +395,7 @@ body {
         background-position: 0% 82%;
     }
 }
+
 @keyframes animacion_ilustracion_carta_legendaria {
 
     0% {
@@ -385,13 +411,14 @@ body {
     }
 }
 
-.navbar1{
+.navbar1 {
     display: flex;
     justify-content: start;
     background-color: #010409;
     display: flex;
     align-items: center;
-    &__icon{
+
+    &__icon {
         //border: .5px solid white;
 
         color: white;
@@ -399,8 +426,13 @@ body {
         padding: .5rem;
         padding-top: 1rem;
         padding-bottom: 1rem;
+        &:hover{
+            scale: 120%;
+            transition: 0.5s;
+        }
     }
-    &__span-contenedor{
+
+    &__span-contenedor {
         //border: .5px solid white;
 
         display: flex;
@@ -410,50 +442,62 @@ body {
         padding-bottom: 5px;
         padding-left: 7px;
         padding-right: 7px;
-        &:hover{
+
+        &:hover {
             background-color: #292e36;
             transition: .1s;
         }
-        &__span1{
+
+        &__span1 {
             //border: .5px solid white;
-    
+
             color: rgba(255, 255, 255, 0.829);
             margin-right: 0.3rem;
         }
-        &__span2{
+
+        &__span2 {
             //border: .5px solid white;
-    
+
             color: rgba(255, 255, 255, 0.397);
             font-size: 13px;
         }
     }
-    
+
 }
-.navbar2{
+
+.navbar2 {
     background-color: #010409;
     //border: .5px solid white;
     display: flex;
     justify-content: start;
     padding-left: .5rem;
-    &__button{
+
+    &__button {
         //border: .2px solid white;
         display: flex;
         padding-top: .3rem;
-        padding-bottom: .35rem;
+        padding-bottom: 0.3rem;
         padding-right: 1rem;
         padding-left: 1rem;
         border-radius: 5px;
         color: white;
         background-color: #010409;
         font-size: 13.5px;
-        margin-bottom: .2rem;
-        &_icon{
+        margin-bottom: .4rem;
+
+        &_icon {
             color: rgba(255, 255, 255, 0.514);
+            &:hover{
+                scale: 110%;
+                transition: .2s;
+            }
         }
-        &_span{
+
+        &_span {
             padding-left: 5px;
         }
-        &:hover{
+
+        &:hover {
             background-color: #292e36;
             transition: .1s;
             scale: 110%;
@@ -462,10 +506,27 @@ body {
 }
 
 
+/* Font family */
+.space-mono-regular {
+    font-family: "Space Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
 
+.space-mono-bold {
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    font-style: normal;
+}
 
+.space-mono-regular-italic {
+    font-family: "Space Mono", monospace;
+    font-weight: 400;
+    font-style: italic;
+}
 
-
-
-
-
+.space-mono-bold-italic {
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    font-style: italic;
+}

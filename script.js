@@ -1,15 +1,241 @@
+// const cards = [
+//     { id: 1, name: "Mega Knight", elixir: 7 },
+//     { id: 2, name: "Lumberjack", elixir: 4 },
+//     { id: 3, name: "Baloon", elixir: 5 },
+//     { id: 4, name: "Firecracker", elixir: 3 },
+//     { id: 5, name: "Miner", elixir: 3 },
+//     { id: 6, name: "Phoenix", elixir: 4 },
+//     { id: 7, name: "Golem", elixir: 8 },
+//     { id: 8, name: "Prince", elixir: 6 },
+//     { id: 9, name: "Baby Dragon", elixir: 4 },
+//     { id: 10, name: "Musketeer", elixir: 4 }
+// ];//Cards instance
+
 const cards = [
-    { id: 1, name: "Mega Knight", elixir: 7 },
-    { id: 2, name: "Lumberjack", elixir: 4 },
-    { id: 3, name: "Baloon", elixir: 5 },
-    { id: 4, name: "Firecracker", elixir: 3 },
-    { id: 5, name: "Miner", elixir: 3 },
-    { id: 6, name: "Phoenix", elixir: 4 },
-    { id: 7, name: "Golem", elixir: 8 },
-    { id: 8, name: "Prince", elixir: 6 },
-    { id: 9, name: "Baby Dragon", elixir: 4 },
-    { id: 10, name: "Musketeer", elixir: 4 }
-];//Cards instance
+    {
+        nombre: "Megacaballero",
+        vida: 3308,
+        dano: 222,
+        tipo: "Legendaria"
+    },
+    {
+        nombre: "Cañón con Ruedas",
+        vida: 1100,
+        dano: 159,
+        tipo: "Común"
+    },
+    {
+        nombre: "Ballesta",
+        vida: 1300,
+        dano: 159,
+        tipo: "Épica"
+    },
+    {
+        nombre: "Pandilla de Duendes",
+        vida: 0,
+        dano: 264,
+        tipo: "Común"
+    },
+    {
+        nombre: "Espíritu Sanador",
+        vida: 0,
+        dano: 0,
+        tipo: "Legendaria"
+    },
+    {
+        nombre: "Rascacielos",
+        vida: 4000,
+        dano: 125,
+        tipo: "Común"
+    },
+    {
+        nombre: "Lanzahechizos",
+        vida: 0,
+        dano: 184,
+        tipo: "Épica"
+    },
+    {
+        nombre: "Pescador",
+        vida: 1076,
+        dano: 96,
+        tipo: "Legendaria"
+    },
+    {
+        nombre: "Máquina Voladora",
+        vida: 2500,
+        dano: 250,
+        tipo: "Épica"
+    },
+    {
+        nombre: "Montapuercos de Batalla",
+        vida: 2420,
+        dano: 172,
+        tipo: "Común"
+    },
+    {
+        nombre: "Dragón Infernal Eléctrico",
+        vida: 1500,
+        dano: "100-300 (Daño por segundo)",
+        tipo: "Legendaria"
+    },
+    {
+        nombre: "Hidracto",
+        vida: 2672,
+        dano: 200,
+        tipo: "Épica"
+    },
+    {
+        nombre: "Globo Bombástico",
+        vida: 1273,
+        dano: 1060,
+        tipo: "Épica"
+    },
+    {
+        nombre: "Lápida de Esqueletos",
+        vida: 2838,
+        dano: 93,
+        tipo: "Rara"
+    },
+    {
+        nombre: "Horda de Murciélagos",
+        vida: 0,
+        dano: 67,
+        tipo: "Común"
+    },
+    {
+        nombre: "Guardias",
+        vida: 328,
+        dano: 84,
+        tipo: "Épica"
+    },
+    {
+        nombre: "Esqueletos Gigantes",
+        vida: 1050,
+        dano: 64,
+        tipo: "Rara"
+    },
+    {
+        nombre: "Torre de Tesla",
+        vida: 954,
+        dano: 128,
+        tipo: "Común"
+    },
+    {
+        nombre: "Dragón Bebé",
+        vida: 1000,
+        dano: 200,
+        tipo: "Común"
+    },
+    {
+        nombre: "Bruja Esqueleto",
+        vida: 665,
+        dano: 69,
+        tipo: "Legendaria"
+    },
+    {
+        nombre: "Hacha",
+        vida: 990,
+        dano: 200,
+        tipo: "Épica"
+    },
+    {
+        nombre: "Lanzarrocas",
+        vida: 4320,
+        dano: 253,
+        tipo: "Rara"
+    },
+    {
+        nombre: "Bárbaros de Élite",
+        vida: 970,
+        dano: 208,
+        tipo: "Común"
+    },
+    {
+        nombre: "Cohete de Élite",
+        vida: 0,
+        dano: 0,
+        tipo: "Épica"
+    },
+    {
+        nombre: "Minions",
+        vida: 190,
+        dano: 86,
+        tipo: "Común"
+    },
+    {
+        nombre: "Golem de Hielo",
+        vida: 3420,
+        dano: 45,
+        tipo: "Épica"
+    },
+    {
+        nombre: "Recolector de Elixir",
+        vida: 0,
+        dano: 0,
+        tipo: "Épica"
+    },
+    {
+        nombre: "Trío de Mosqueteras",
+        vida: 497,
+        dano: 177,
+        tipo: "Rara"
+    },
+    {
+        nombre: "Dragón de Hielo",
+        vida: 1000,
+        dano: 63,
+        tipo: "Legendaria"
+    },
+    {
+        nombre: "Gárgola",
+        vida: 289,
+        dano: 65,
+        tipo: "Épica"
+    },
+    {
+        nombre: "Esqueletos",
+        vida: 67,
+        dano: 67,
+        tipo: "Común"
+    },
+    {
+        nombre: "Gigante Noble",
+        vida: 3016,
+        dano: 159,
+        tipo: "Común"
+    },
+    {
+        nombre: "Cabaña de Duendes",
+        vida: 1100,
+        dano: 108,
+        tipo: "Rara"
+    },
+    {
+        nombre: "Horno",
+        vida: 0,
+        dano: 169,
+        tipo: "Común"
+    },
+    {
+        nombre: "Tótem de Sanación",
+        vida: 0,
+        dano: 0,
+        tipo: "Rara"
+    },
+    {
+        nombre: "Torre de Bárbaros",
+        vida: 2720,
+        dano: "Depende del nivel",
+        tipo: "Rara"
+    },
+    {
+        nombre: "Cementerio",
+        vida: 0,
+        dano: 0,
+        tipo: "Épica"
+    }
+];
+
 
 /* Functions */
 function showCard(card) {
@@ -133,7 +359,7 @@ function mainFunction() {
 
 
 
-mainFunction();
+//mainFunction();
 
 
 
