@@ -11,7 +11,7 @@
 //     { id: 10, name: "Musketeer", elixir: 4 }
 // ];//Cards instance
 
-const cards = [
+const cardsArray = [
     {
         nombre: "Megacaballero",
         vida: 3308,
@@ -236,6 +236,48 @@ const cards = [
     }
 ];
 
+function reenderizarCartas(cards) {
+    let container = document.getElementById("container");
+    container.innerHTML = "";
+
+    cards.forEach(card => {
+
+
+
+        let troopCard = document.createElement("div");
+        troopCard.classList.add("troopCard");
+        troopCard.innerHTML = `
+            <h3>${card.nombre}</h3>
+            <h3>${card.vida}</h3>
+            <h3>${card.tipo}</h3>
+            `;
+        container.appendChild(troopCard);
+
+        //let botonAgregarAlCarrito = document.getElementById("botonCarrito" + producto.id);
+        //botonAgregarAlCarrito.addEventListener("click", (e) => AgregarProductoAlCarrito(e, productos, carrito));
+    });
+}
+
+
+
+
+
+reenderizarCartas(cardsArray);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ------------------------------------------------------------------------------------------------------------ */
 
 /* Functions */
 function showCard(card) {
@@ -305,39 +347,37 @@ boton.onclick = clickShowCards;
 
 //Principal function
 function mainFunction() {
-    let deck = [];
-    let opcion = 0;
+    //     let deck = [];
+    //     let opcion = 0;
 
-    while ((opcion = parseInt(prompt("Menu de opciones:\n" + "1- Mostrar lista de cartas\n" + "2- Mostrar mi mazo\n" + "3- Armar mi mazo de 8 cartas\n" + "4- Eliminar una carta\n" + "5- Agregar una carta\n" + "0- Salir \n" + "Ingrese una opcion: "))) !== 0) {
-        console.log("entro al while");
-        switch (opcion) {
-            case 1:
-                alert(showCards(cards));
-                break;
-            case 2:
-                alert(showCards(deck));
-                break;
-            case 3:
-                deck = buildDeck();
-                alert(showCards(deck));
-                break;
-            case 4:
-                let id4 = 0;
-                deck = deleteCard(id4 = parseInt(prompt("Ingrese el ID de la carta que desea eliminar: ")), deck);
-                alert(showCards(deck));
-                break;
-            case 5:
-                let id5 = 0;
-                deck = addCard((id5 = parseInt(prompt("Ingrese el ID de la carta que quiere agregar:"))), deck);
-                alert(showCards(deck));
-                break;
-            default:
-                console.log("La opción no es ni 1, ni 2, ni 3");
-                break;
-        }
-    }
-
-
+    //     while ((opcion = parseInt(prompt("Menu de opciones:\n" + "1- Mostrar lista de cartas\n" + "2- Mostrar mi mazo\n" + "3- Armar mi mazo de 8 cartas\n" + "4- Eliminar una carta\n" + "5- Agregar una carta\n" + "0- Salir \n" + "Ingrese una opcion: "))) !== 0) {
+    //         console.log("entro al while");
+    //         switch (opcion) {
+    //             case 1:
+    //                 alert(showCards(cards));
+    //                 break;
+    //             case 2:
+    //                 alert(showCards(deck));
+    //                 break;
+    //             case 3:
+    //                 deck = buildDeck();
+    //                 alert(showCards(deck));
+    //                 break;
+    //             case 4:
+    //                 let id4 = 0;
+    //                 deck = deleteCard(id4 = parseInt(prompt("Ingrese el ID de la carta que desea eliminar: ")), deck);
+    //                 alert(showCards(deck));
+    //                 break;
+    //             case 5:
+    //                 let id5 = 0;
+    //                 deck = addCard((id5 = parseInt(prompt("Ingrese el ID de la carta que quiere agregar:"))), deck);
+    //                 alert(showCards(deck));
+    //                 break;
+    //             default:
+    //                 console.log("La opción no es ni 1, ni 2, ni 3");
+    //                 break;
+    //         }
+    //     }
 }
 
 
@@ -359,32 +399,32 @@ function mainFunction() {
 
 
 
-mainFunction();
+//mainFunction();
 
 
 
 
-const $cartas = document.querySelectorAll(".carta");
-for (let i = 0; i < $cartas.length; i++) {
-    let elemento = $cartas[i];
-    elemento.setAttribute('id', `carta${i}`);
+// const $cartas = document.querySelectorAll(".carta");
+// for (let i = 0; i < $cartas.length; i++) {
+//     let elemento = $cartas[i];
+//     elemento.setAttribute('id', `carta${i}`);
 
-    let idCarta = document.getElementById(elemento.id);
-    idCarta.addEventListener("click", () => {
-        idCarta.classList.toggle("vuelta");
-    });
-}
+//     let idCarta = document.getElementById(elemento.id);
+//     idCarta.addEventListener("click", () => {
+//         idCarta.classList.toggle("vuelta");
+//     });
+// }
 
-// Swiper init
-var swiper = new Swiper('.slider-cartas', {
-    slidesPerView: 1,
-    spaceBetween: 10,
-    pagination: {
-        el: '.slider-cartas__paginacion',
-        clickable: true,
-        renderBullet: function (index, className) {
-            return '<span class="' + className + '">' + (index + 1) + '</span>';
-        },
-    }
-});
+// // Swiper init
+// var swiper = new Swiper('.slider-cartas', {
+//     slidesPerView: 1,
+//     spaceBetween: 10,
+//     pagination: {
+//         el: '.slider-cartas__paginacion',
+//         clickable: true,
+//         renderBullet: function (index, className) {
+//             return '<span class="' + className + '">' + (index + 1) + '</span>';
+//         },
+//     }
+// });
 

@@ -530,3 +530,20 @@ body {
     font-weight: 700;
     font-style: italic;
 }
+
+/*-------------------------------------------------------------------------------------------------------------*/
+.troopCard {
+    width: 100px;
+    border: 1px solid white;
+    color: white;
+    font-size: 10px;
+    padding: .5rem;
+    margin: .5rem;
+}
+
+.container{
+    border: 1px solid white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
