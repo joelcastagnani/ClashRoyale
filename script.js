@@ -268,17 +268,10 @@ function buildDeck() {
     let buildedDeck = [];
     let addCardButton = document.getElementById("" + producto.id);
     botonAgregarAlCarrito.addEventListener("click", (e) => AgregarProductoAlCarrito(e, productos, carrito));
-}//Build an 8 cards deck
-
-
-
-
-let button = document.getElementById("deckBuilder");
-
-button.addEventListener("click", () => {
-    rerenderEmpty("main__container");
-    let mainContainer = document.getElementById("main__container");
-    switchClass("main__container", mainContainer.className, "mainContainerBuildDeck");
+}//Build an 8 cards deck / funcion de la clase todavia
+function renderBuildDeck(containerId, newClass, cards){
+    let mainContainer = document.getElementById(containerId);
+    switchClass(containerId, mainContainer.className, newClass);
     mainContainer.innerHTML = `
         <section class=main__container__section>
             <div class=deck>
@@ -288,7 +281,7 @@ button.addEventListener("click", () => {
                     <card id=troopCard3 class=troopCard>3</card>
                     <card id=troopCard4 class=troopCard>4</card>
                 </section>
-                
+
                 <section class=deck__section>
                     <card id=troopCard5 class=troopCard>5</card>
                     <card id=troopCard6 class=troopCard>6</card>
@@ -296,15 +289,23 @@ button.addEventListener("click", () => {
                     <card id=troopCard8 class=troopCard>8</card>
                 </section>
             </div>
+
+            <div>
+                <button class=buildDeckButtons>botones</button>
+            </div>
         </section>
 
         <section id=cardsCont class=main__container__section-cards>`
-                renderCards(cardsArray, "cardsCont")
-    `
-        </section>
-    `;
-});
-
+            renderCards(cards, "cardsCont");
+    `</section>`;
+}
+function clickButton(buttonId, renderId, newClass, cards){
+    let button = document.getElementById(buttonId);
+    button.addEventListener("click", () => {
+        rerenderEmpty(renderId);
+        renderBuildDeck(renderId, newClass, cards);
+    });
+}
 
 
 
@@ -315,6 +316,7 @@ button.addEventListener("click", () => {
 
 
 renderCards(cardsArray, "main__container");
+clickButton("deckBuilder", "main__container", "mainContainerBuildDeck", cardsArray);
 /* ------------------------------------------------------------------------------------------------------------ */
 
 /* Functions */
