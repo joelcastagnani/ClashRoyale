@@ -24,6 +24,7 @@ body {
     background-color: #0d1117;
     min-width: 450px;
     width: 70%;
+    margin-bottom: 1rem;
 }
 
 
@@ -541,9 +542,31 @@ body {
     margin: .5rem;
 }
 
-.container{
-    border: 1px solid white;
+
+
+.main{
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
+    &__options{
+        border: solid white 1px;
+        width: 20%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .deckBuilder{
+            border: solid;
+        }
+        &__button{
+            width: 150px;
+            margin-top: 1rem;
+            margin-bottom: 1;
+        }
+    }
+    &__container{
+        width: 80%;
+        border: 1px solid white;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }

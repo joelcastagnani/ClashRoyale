@@ -236,14 +236,12 @@ const cardsArray = [
     }
 ];
 
-function reenderizarCartas(cards) {
-    let container = document.getElementById("container");
-    container.innerHTML = "";
+
+function renderCards(cards) {
+    let main__container = document.getElementById("main__container");
+    main__container.innerHTML = "";
 
     cards.forEach(card => {
-
-
-
         let troopCard = document.createElement("div");
         troopCard.classList.add("troopCard");
         troopCard.innerHTML = `
@@ -251,32 +249,39 @@ function reenderizarCartas(cards) {
             <h3>${card.vida}</h3>
             <h3>${card.tipo}</h3>
             `;
-        container.appendChild(troopCard);
+        main__container.appendChild(troopCard);
 
         //let botonAgregarAlCarrito = document.getElementById("botonCarrito" + producto.id);
         //botonAgregarAlCarrito.addEventListener("click", (e) => AgregarProductoAlCarrito(e, productos, carrito));
     });
 }
 
+function rerenderEmpty(elementId){
+    let element = document.getElementById(elementId);
+    element.innerHTML = "";
+}
 
-
-
-
-reenderizarCartas(cardsArray);
-
-
-
-
-
-
-
-
-
+let button = document.getElementById("deckBuilder");
+button.addEventListener("click", () => {
+    rerenderEmpty("main__container")
+});
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+renderCards(cardsArray);
 /* ------------------------------------------------------------------------------------------------------------ */
 
 /* Functions */
@@ -341,44 +346,44 @@ function clickShowCards() {
     alert(showCards(cards));
 }
 const boton = document.getElementById("card");
-boton.onclick = clickShowCards;
+//boton.onclick = clickShowCards;
 
 
 
 //Principal function
-function mainFunction() {
-    //     let deck = [];
-    //     let opcion = 0;
+// function mainFunction() {
+//     let deck = [];
+//     let opcion = 0;
 
-    //     while ((opcion = parseInt(prompt("Menu de opciones:\n" + "1- Mostrar lista de cartas\n" + "2- Mostrar mi mazo\n" + "3- Armar mi mazo de 8 cartas\n" + "4- Eliminar una carta\n" + "5- Agregar una carta\n" + "0- Salir \n" + "Ingrese una opcion: "))) !== 0) {
-    //         console.log("entro al while");
-    //         switch (opcion) {
-    //             case 1:
-    //                 alert(showCards(cards));
-    //                 break;
-    //             case 2:
-    //                 alert(showCards(deck));
-    //                 break;
-    //             case 3:
-    //                 deck = buildDeck();
-    //                 alert(showCards(deck));
-    //                 break;
-    //             case 4:
-    //                 let id4 = 0;
-    //                 deck = deleteCard(id4 = parseInt(prompt("Ingrese el ID de la carta que desea eliminar: ")), deck);
-    //                 alert(showCards(deck));
-    //                 break;
-    //             case 5:
-    //                 let id5 = 0;
-    //                 deck = addCard((id5 = parseInt(prompt("Ingrese el ID de la carta que quiere agregar:"))), deck);
-    //                 alert(showCards(deck));
-    //                 break;
-    //             default:
-    //                 console.log("La opción no es ni 1, ni 2, ni 3");
-    //                 break;
-    //         }
-    //     }
-}
+//     while ((opcion = parseInt(prompt("Menu de opciones:\n" + "1- Mostrar lista de cartas\n" + "2- Mostrar mi mazo\n" + "3- Armar mi mazo de 8 cartas\n" + "4- Eliminar una carta\n" + "5- Agregar una carta\n" + "0- Salir \n" + "Ingrese una opcion: "))) !== 0) {
+//         console.log("entro al while");
+//         switch (opcion) {
+//             case 1:
+//                 alert(showCards(cards));
+//                 break;
+//             case 2:
+//                 alert(showCards(deck));
+//                 break;
+//             case 3:
+//                 deck = buildDeck();
+//                 alert(showCards(deck));
+//                 break;
+//             case 4:
+//                 let id4 = 0;
+//                 deck = deleteCard(id4 = parseInt(prompt("Ingrese el ID de la carta que desea eliminar: ")), deck);
+//                 alert(showCards(deck));
+//                 break;
+//             case 5:
+//                 let id5 = 0;
+//                 deck = addCard((id5 = parseInt(prompt("Ingrese el ID de la carta que quiere agregar:"))), deck);
+//                 alert(showCards(deck));
+//                 break;
+//             default:
+//                 console.log("La opción no es ni 1, ni 2, ni 3");
+//                 break;
+//         }
+//     }
+// }
 
 
 
