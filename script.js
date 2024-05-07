@@ -237,33 +237,72 @@ const cardsArray = [
 ];
 
 
-function renderCards(cards) {
-    let main__container = document.getElementById("main__container");
-    main__container.innerHTML = "";
+function renderCards(cards, elementId) {
+    let mainContainer = document.getElementById(elementId);
+    mainContainer.innerHTML = "";
 
     cards.forEach(card => {
-        let troopCard = document.createElement("div");
+        let troopCard = document.createElement("card");
         troopCard.classList.add("troopCard");
         troopCard.innerHTML = `
             <h3>${card.nombre}</h3>
             <h3>${card.vida}</h3>
             <h3>${card.tipo}</h3>
             `;
-        main__container.appendChild(troopCard);
+        mainContainer.appendChild(troopCard);
 
         //let botonAgregarAlCarrito = document.getElementById("botonCarrito" + producto.id);
         //botonAgregarAlCarrito.addEventListener("click", (e) => AgregarProductoAlCarrito(e, productos, carrito));
     });
 }
-
-function rerenderEmpty(elementId){
+function switchClass(elementId, class1, class2) {
+    var elemento = document.getElementById(elementId);
+    elemento.classList.remove(class1);
+    elemento.classList.add(class2);
+}
+function rerenderEmpty(elementId) {
     let element = document.getElementById(elementId);
     element.innerHTML = "";
 }
+function buildDeck() {
+    let buildedDeck = [];
+    let addCardButton = document.getElementById("" + producto.id);
+    botonAgregarAlCarrito.addEventListener("click", (e) => AgregarProductoAlCarrito(e, productos, carrito));
+}//Build an 8 cards deck
+
+
+
 
 let button = document.getElementById("deckBuilder");
+
 button.addEventListener("click", () => {
-    rerenderEmpty("main__container")
+    rerenderEmpty("main__container");
+    let mainContainer = document.getElementById("main__container");
+    switchClass("main__container", mainContainer.className, "mainContainerBuildDeck");
+    mainContainer.innerHTML = `
+        <section class=main__container__section>
+            <div class=deck>
+                <section class=deck__section>
+                    <card id=troopCard1 class=troopCard>1</card>
+                    <card id=troopCard2 class=troopCard>2</card>
+                    <card id=troopCard3 class=troopCard>3</card>
+                    <card id=troopCard4 class=troopCard>4</card>
+                </section>
+                
+                <section class=deck__section>
+                    <card id=troopCard5 class=troopCard>5</card>
+                    <card id=troopCard6 class=troopCard>6</card>
+                    <card id=troopCard7 class=troopCard>7</card>
+                    <card id=troopCard8 class=troopCard>8</card>
+                </section>
+            </div>
+        </section>
+
+        <section id=cardsCont class=main__container__section-cards>`
+                renderCards(cardsArray, "cardsCont")
+    `
+        </section>
+    `;
 });
 
 
@@ -275,13 +314,7 @@ button.addEventListener("click", () => {
 
 
 
-
-
-
-
-
-
-renderCards(cardsArray);
+renderCards(cardsArray, "main__container");
 /* ------------------------------------------------------------------------------------------------------------ */
 
 /* Functions */
@@ -330,16 +363,16 @@ function deleteCard(idCard, deck) {
     alert(text);
     return deck;
 }//Delete one card from your deck
-function buildDeck() {
-    let buildedDeck = [];
-    let i = 0;
-    while (i < 8) {
-        let id = parseInt(prompt("Mazo actual:\n" + showCards(buildedDeck) + "\nIngrese el id de la carta numero " + (i + 1) + ":"));
-        buildedDeck = addCard(id, buildedDeck);
-        i++;
-    }
-    return buildedDeck;
-}//Build an 8 cards deck
+// function buildDeck() {
+//     let buildedDeck = [];
+//     let i = 0;
+//     while (i < 8) {
+//         let id = parseInt(prompt("Mazo actual:\n" + showCards(buildedDeck) + "\nIngrese el id de la carta numero " + (i + 1) + ":"));
+//         buildedDeck = addCard(id, buildedDeck);
+//         i++;
+//     }
+//     return buildedDeck;
+// }//Build an 8 cards deck
 
 /* On click functions */
 function clickShowCards() {
