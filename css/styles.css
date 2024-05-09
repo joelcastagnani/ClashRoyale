@@ -429,17 +429,23 @@ body {
 
 /*-------------------------------------------------------------------------------------------------------------*/
 .troopCard {
-  width: 100px;
+  width: 60px;
+  height: 70px;
   border: 1px solid white;
   font-size: 10px;
-  padding: 0.5rem;
-  margin: 0.5rem;
   color: white;
+  background-color: cadetblue;
+  font-size: x-small;
+}
+
+.button {
+  font-size: xx-small;
 }
 
 .main {
   display: flex;
   justify-content: center;
+  background-color: black;
 }
 .main__options {
   border: solid white 1px;
@@ -453,21 +459,27 @@ body {
   margin-top: 1rem;
   margin-bottom: 1;
 }
-.main__container {
+.main__main-container {
   width: 80%;
-  border: 1px solid white;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.mainContainerBuildDeck {
-  width: 80%;
-  border: 1px solid white;
+  border: white 1px solid;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: white;
+}
+.main__main-container__deck {
+  width: 32%;
+  height: 144px;
+  border: white solid 1px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.main__main-container__cards {
+  border: 1px solid white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
 }
 
 /*# sourceMappingURL=styles.css.map */

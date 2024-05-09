@@ -1,6 +1,6 @@
 const cardsArray = [
     {
-        nombre: "Megacaballero",
+        nombre: "Mega",
         vida: 3308,
         dano: 222,
         tipo: "Legendaria",
@@ -8,7 +8,7 @@ const cardsArray = [
         id: 1
     },
     {
-        nombre: "Cañón con Ruedas",
+        nombre: "Cañón",
         vida: 1100,
         dano: 159,
         tipo: "Común",
@@ -16,7 +16,7 @@ const cardsArray = [
         id: 2
     },
     {
-        nombre: "Ballesta",
+        nombre: "Balle",
         vida: 1300,
         dano: 159,
         tipo: "Épica",
@@ -24,7 +24,7 @@ const cardsArray = [
         id: 3
     },
     {
-        nombre: "Pandilla de Duendes",
+        nombre: "Pandilla",
         vida: 0,
         dano: 264,
         tipo: "Común",
@@ -32,7 +32,7 @@ const cardsArray = [
         id: 4
     },
     {
-        nombre: "Espíritu Sanador",
+        nombre: "Espíritu",
         vida: 0,
         dano: 0,
         tipo: "Legendaria",
@@ -40,7 +40,7 @@ const cardsArray = [
         id: 5
     },
     {
-        nombre: "Rascacielos",
+        nombre: "Rascaci",
         vida: 4000,
         dano: 125,
         tipo: "Común",
@@ -48,7 +48,7 @@ const cardsArray = [
         id: 6
     },
     {
-        nombre: "Lanzahechizos",
+        nombre: "Lanza",
         vida: 0,
         dano: 184,
         tipo: "Épica",
@@ -79,8 +79,8 @@ function filterAndRender(cards, deck) {
     renderCards(filteredCards, deck);
 }
 function renderCards(cards, deck) {
-    let mainContainer = document.getElementById("mainContainer")
-    mainContainer.innerHTML = ""
+    let mainCardsContainer = document.getElementById("mainCardsContainer")
+    mainCardsContainer.innerHTML = ""
 
     cards.forEach(card => {
         let cardContainer = document.createElement("div")
@@ -90,10 +90,10 @@ function renderCards(cards, deck) {
             <h3>${card.nombre}</h3>
             <img${card.vida} />
             <h4>${card.tipo}</h4>
-            <button id=addCardToDeckButton${card.id}>Agregar al mazo</button>
+            <button class="button" id=addCardToDeckButton${card.id}>Agregar</button>
         `
 
-        mainContainer.appendChild(cardContainer)
+        mainCardsContainer.appendChild(cardContainer)
 
         let addCardToDeckButton = document.getElementById("addCardToDeckButton" + card.id);
         addCardToDeckButton.addEventListener("click", (e) => addCardToDeck(e, cards, deck));
@@ -118,16 +118,16 @@ function addCardToDeck(e, cards, deck) {
     renderDeck(deck)
 }
 function renderDeck(deck) {
-    let deckContainer = document.getElementById("deckContainer")
+    let deckContainer = document.getElementById("mainDeckContainer")
     deckContainer.innerHTML = ""
     deck.forEach(card => {
         let cardContainer = document.createElement("div")
-        cardContainer.className = "cardContainer"
+        cardContainer.classList = "troopCard"
 
         cardContainer.innerHTML = `
             <p>${card.nombre}</p>
             <p>${card.tipo}</p>
-            <button id=eliminar${card.id}>ELIMINAR</button>
+            <button class="button" id=eliminar${card.id}>ELIMINAR</button>
         `
         deckContainer.appendChild(cardContainer)
     })

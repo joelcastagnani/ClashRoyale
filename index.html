@@ -49,15 +49,16 @@
     </nav>
 
     <main class="main">
-        <div class="main__options">
+        <section class="main__options">
             <button id="mainShowCardsButton" class="main__options__button">Ver cartas</button>
             <button id="mainSearchButton" class="main__options__button">Buscar carta</button>
             <input id="mainSearchIput" placeholder="Buscar por nombre">
+        </section>
 
-            <div id="deckContainer"></div>
-        </div>
-
-        <div id="mainContainer" class="main__container"></div>
+        <section class="main__main-container" id="mainMainContainer">
+            <div class="main__main-container__deck" id="mainDeckContainer"></div>
+            <div class="main__main-container__cards" id="mainCardsContainer"></div>
+        </section> 
     </main>
 
 
