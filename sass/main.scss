@@ -503,7 +503,6 @@ body {
         &:hover {
             background-color: #292e36;
             transition: .1s;
-            scale: 110%;
         }
     }
 }
@@ -546,39 +545,67 @@ body {
     background-color: cadetblue;
     font-size: x-small;
 }
-.button{
-    font-size: xx-small;
+
+.button {
+    padding: .1rem;
+    border-radius: 5px;
+    color: white;
+    background-color: #010409;
+    font-size: 10px;
+    margin-bottom: .4rem;
+    &:hover {
+        background-color: #292e36;
+        transition: .1s;
+    }
 }
+
+.optionButton {
+    width: 90%;
+    padding-top: .3rem;
+    padding-bottom: .3rem;
+    border-radius: 5px;
+    color: white;
+    background-color: #010409;
+    font-size: 13.5px;
+    margin-bottom: .4rem;
+    margin-top: .5rem;
+    &:hover {
+        background-color: #292e36;
+        transition: .1s;
+    }
+}
+
 .main {
     display: flex;
     justify-content: center;
     background-color: black;
+
     &__options {
         border: solid white 1px;
         width: 20%;
         display: flex;
         flex-direction: column;
         align-items: center;
-
-        &__button {
-            width: 150px;
-            margin-top: 1rem;
-            margin-bottom: 1;
-        }
     }
-    &__main-container{
+
+    &__main-container {
         width: 80%;
         border: white 1px solid;
         display: flex;
         flex-direction: column;
         align-items: center;
-        &__deck{
-            width: 32%;
+
+        &__deck {
+            width: 242px;
             height: 144px;
             border: white solid 1px;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
+        }
+        &__reset-button {
+            color: white;
+            margin: 1rem;
         }
         &__cards {
             border: 1px solid white;
@@ -589,5 +616,3 @@ body {
         }
     }
 }
-
-

@@ -399,7 +399,6 @@ body {
 .navbar2__button:hover {
   background-color: #292e36;
   transition: 0.1s;
-  scale: 110%;
 }
 
 /* Font family */
@@ -439,7 +438,32 @@ body {
 }
 
 .button {
-  font-size: xx-small;
+  padding: 0.1rem;
+  border-radius: 5px;
+  color: white;
+  background-color: #010409;
+  font-size: 10px;
+  margin-bottom: 0.4rem;
+}
+.button:hover {
+  background-color: #292e36;
+  transition: 0.1s;
+}
+
+.optionButton {
+  width: 90%;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  border-radius: 5px;
+  color: white;
+  background-color: #010409;
+  font-size: 13.5px;
+  margin-bottom: 0.4rem;
+  margin-top: 0.5rem;
+}
+.optionButton:hover {
+  background-color: #292e36;
+  transition: 0.1s;
 }
 
 .main {
@@ -454,11 +478,6 @@ body {
   flex-direction: column;
   align-items: center;
 }
-.main__options__button {
-  width: 150px;
-  margin-top: 1rem;
-  margin-bottom: 1;
-}
 .main__main-container {
   width: 80%;
   border: white 1px solid;
@@ -467,12 +486,16 @@ body {
   align-items: center;
 }
 .main__main-container__deck {
-  width: 32%;
+  width: 242px;
   height: 144px;
   border: white solid 1px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+.main__main-container__reset-button {
+  color: white;
+  margin: 1rem;
 }
 .main__main-container__cards {
   border: 1px solid white;
