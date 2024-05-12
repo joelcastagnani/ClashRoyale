@@ -557,13 +557,20 @@ const cardsArray = [
 
 function mainFunction(cards) {
     let deck = getDeckLS();
-    let mainSearchButton = document.getElementById("mainSearchButton");
-    let resetButton = document.getElementById("resetButton");
-
     renderDeck(deck);
 
-    mainSearchButton.addEventListener("click", () => filterAndRender(cards, deck));
+    let mainSearchButton = document.getElementById("mainSearchButton");
+    mainSearchButton.addEventListener("click", () => filterAndRender(cards));
+
+    let resetButton = document.getElementById("resetButton");
     resetButton.addEventListener("click", () => resetDeck(deck));
+
+    let mainSearchIput = document.getElementById("mainSearchInput");
+    mainSearchIput.addEventListener("keypress", (e) => {
+        if (e.keyCode === 13) {
+            filterAndRender(cards);
+        }
+    });
 
     renderCards(cards, deck);
 }
@@ -579,15 +586,15 @@ function resetDeckLS() {
     localStorage.removeItem("deck");
     renderDeck([]);
 }
-function filterAndRender(cards, deck) {
+function filterAndRender(cards) {
     let filteredCards = filterCards(cards);
-    renderCards(filteredCards, deck);
+    renderCards(filteredCards);
 }
 function filterCards(cards) {
-    let mainSearchIput = document.getElementById("mainSearchIput");
-    return cards.filter(card => card.nombre.includes(mainSearchIput.value));
+    let mainSearchInput = document.getElementById("mainSearchInput");
+    return cards.filter(card => card.nombre.includes(mainSearchInput.value));
 }
-function renderCards(cards, deck) {
+function renderCards(cards) {
     let mainCardsContainer = document.getElementById("mainCardsContainer");
     mainCardsContainer.innerHTML = "";
 
@@ -605,10 +612,11 @@ function renderCards(cards, deck) {
         mainCardsContainer.appendChild(cardContainer);
 
         let addCardToDeckButton = document.getElementById("addCardToDeckButton" + card.id);
-        addCardToDeckButton.addEventListener("click", (e) => addCardToDeck(e, cards, deck));
+        addCardToDeckButton.addEventListener("click", (e) => addCardToDeck(e, cards));
     });
 }
-function addCardToDeck(e, cards, deck) {
+function addCardToDeck(e, cards) {
+    let deck = getDeckLS();
     let cardId = Number(e.target.id.substring(19));
     let cardPositionInDeck = deck.findIndex(card => card.id === cardId);
     let cardToAdd = cards.find(card => card.id === cardId);
@@ -628,7 +636,8 @@ function addCardToDeck(e, cards, deck) {
     localStorage.setItem("deck", JSON.stringify(deck));//1-PRIMERO TENES QUE STRINGIFEAR UN EL MAZO, Y DESPUES SETEARLO EL STORAGE
     renderDeck(deck);
 }
-function renderDeck(deck) {
+function renderDeck() {
+    let deck = getDeckLS();
     let cont = 0;
     let deckContainer = document.getElementById("mainDeckContainer");
     deckContainer.innerHTML = "";
@@ -655,7 +664,8 @@ function renderDeck(deck) {
         }
     });
 }
-function removeCardFromDeck(cardId, deck) {
+function removeCardFromDeck(cardId) {
+    let deck = getDeckLS();
     let cardIndex = deck.findIndex(card => card.id === cardId);
 
     if (cardIndex !== -1) {
@@ -670,8 +680,9 @@ function renderEmpty(elementId) {
     let element = document.getElementById(elementId);
     element.innerHTML = "";
 }
-function resetDeck(deck) {
-    deck.length = 0; // Reset the deck array to empty
+function resetDeck() {
+    let deck = getDeckLS();
+    deck.length = 0; // Reset deck array to empty
     resetDeckLS();
     renderDeck(deck);
 }
