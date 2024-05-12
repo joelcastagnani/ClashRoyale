@@ -108,7 +108,6 @@ body {
 }
 .main__main-container {
   width: 80%;
-  border: white 1px solid;
   display: flex;
   flex-direction: column;
   align-items: center;
