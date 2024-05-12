@@ -845,3 +845,196 @@ clickButton("deckBuilder", "main__container", "mainContainerBuildDeck", deck);
 //         bottom: 70px;
 //     }
 // }
+
+
+
+// <!-- <article class="">
+//         <div>
+//             <span></span>
+//             <div></div>
+//             <figure>
+//                 <img>
+//                 <figcaption>
+//                     <span>
+//                         Nivel 110
+//                     </span>
+//                 </figcaption>
+//             </figure>
+//         </div>
+
+//         <div></div> este no lo tocaste todavia
+//     </article> ESTO ES UN ESQUELETO DE LA CARTA-->
+// <!-- <article class="carta carta legendaria">
+//         <div class="carta__cara carta__cara_delantera cara cara-delantera">
+//             <span class="carta__cantidad-elixir"></span>
+//             <div class="carta__borde"></div>
+//             <figure class="carta__contenido-delantero">
+//                 <img class="carta__ilustracion" src="https://i.ibb.co/BgDKfpN/arquero.png">
+//                 <figcaption class="carta__nivel">
+//                     <span>
+//                         Nivel 110
+//                     </span>
+//                 </figcaption>
+//             </figure>
+//         </div>
+
+//         <div></div>
+//     </article> -->
+// <!-- <article class="carta carta_legendaria">
+//         <div class="carta__cara carta__cara_delantera cara cara-delantera">
+//             <span class="carta__cantidad-elixir">4</span>
+//             <div class="carta__borde"></div>
+//             <figure class="carta__contenido-delantero">
+//                 <img class="carta__ilustracion" src="https://i.ibb.co/BgDKfpN/arquero.png" />
+//                 <figcaption class="carta__nivel">
+//                     <span>
+//                         Nivel 11
+//                     </span>
+//                 </figcaption>
+//             </figure>
+//         </div>
+//     </article>
+//     <article class="carta carta_epica">
+//         <div class="carta__cara carta__cara_delantera">
+//             <span class="carta__cantidad-elixir">5</span>
+//             <figure class="carta__contenido-delantero">
+//                 <img class="carta__ilustracion" src="https://i.ibb.co/64L07VB/bruja.png" />
+//                 <figcaption class="carta__nivel">Nivel 11</figcaption>
+//             </figure>
+//         </div>
+//         <div class="carta__cara carta__cara_trasera">
+//             <div class="carta__contenido-trasero">
+//                 <h1 class="carta__nombre-personaje">Bruja</h1>
+//                 <p class="carta__descripcion">
+//                     Invoca esqueletos y dispara rayos destructores. Por desgracia,
+//                     sus brillantes ojos de color rosa no disparan rayos láser.
+//                 </p>
+//                 <img class="carta__icono-clash" src="https://i.ibb.co/Q65LCnk/icono.png" />
+//             </div>
+//         </div>
+//     </article>
+//     <article class="carta carta_especial">
+//         <div class="carta__cara carta__cara_delantera">
+//             <span class="carta__cantidad-elixir">3</span>
+//             <figure class="carta__contenido-delantero">
+//                 <img class="carta__ilustracion" src="https://i.ibb.co/PrJn44M/golem.png" />
+//                 <figcaption class="carta__nivel"> Nivel 12</figcaption>
+//             </figure>
+//         </div>
+//         <div class="carta__cara carta__cara_trasera">
+//             <div class="carta__contenido-trasero">
+//                 <h1 class="carta__nombre-personaje">Gólem de Elixir</h1>
+//                 <p class="carta__descripcion">
+//                     "Al ser destruido, se divide en dos golemitas de elixir,que,al ser destruuidos,
+//                     se dividen en dos pegotes de elixir. !Cuando tu rival acabe con un pegote,
+//                     recibira una gota de elixir"
+//                 </p>
+//                 <img class="carta__icono-clash" src="https://i.ibb.co/Q65LCnk/icono.png" />
+//             </div>
+//         </div>
+//     </article>
+//     <article class="carta carta_comun">
+//         <div class="carta__cara carta__cara_delantera">
+//             <span class="carta__cantidad-elixir">5</span>
+//             <figure class="carta__contenido-delantero">
+//                 <img class="carta__ilustracion" src="https://i.ibb.co/ySzdgvR/los-pillos.png" />
+//                 <figcaption class="carta__nivel">Nivel 12</figcaption>
+//             </figure>
+//         </div>
+//         <div class="carta__cara carta__cara_trasera">
+//             <div class="carta__contenido-trasero">
+//                 <h1 class="carta__nombre-personaje">Pillos</h1>
+//                 <p class="carta__descripcion">
+//                     ¡Libera a un trío de pillos de lo más travieso! El chico toma la delantera,
+//                     mientras que las chicas acribillan a los enemigos desde la retaguardia ¡lanzando
+//                     bolas de chicle con sus tirachinas!
+//                 </p>
+//                 <img class="carta__icono-clash" src="https://i.ibb.co/Q65LCnk/icono.png" />
+//             </div>
+//         </div>
+//     </article>
+// -->
+// <!-- <article class="carta carta_legendaria">
+//         <div class="carta__cara carta__cara_delantera cara cara-delantera">
+//             <span class="carta__cantidad-elixir">4</span>
+//             <div class="carta__borde"></div>
+//             <figure class="carta__contenido-delantero">
+//                 <img class="carta__ilustracion" src="https://i.ibb.co/BgDKfpN/arquero.png" />
+//                 <figcaption class="carta__nivel"><span>Nivel 11</span></figcaption>
+//             </figure>
+//         </div>
+
+//         <div class="carta__cara carta__cara_trasera cara cara-trasera">
+//             <div class="carta__borde">
+//                 <div class="carta__contenido-trasero">
+//                     <h1 class="carta__nombre-personaje">Arquero Magico</h1>
+//                     <p class="carta__descripcion">
+//                         No es un mago ni tampoco un arquero. Dispara una flecha mágica que atraviesa
+//                         y daña a los enemigos que se interponen en su camino. No es ningún truco,
+//                         ¡es magia!
+//                     </p>
+//                     <img class="carta__icono-clash" src="https://i.ibb.co/Q65LCnk/icono.png" />
+//                 </div>
+//             </div>
+//         </div>
+//     </article><--Carta Legendaria--
+//     <article class="carta carta_epica">
+//         <div class="carta__cara carta__cara_delantera">
+//             <span class="carta__cantidad-elixir">5</span>
+//             <figure class="carta__contenido-delantero">
+//                 <img class="carta__ilustracion" src="https://i.ibb.co/64L07VB/bruja.png" />
+//                 <figcaption class="carta__nivel">Nivel 11</figcaption>
+//             </figure>
+//         </div>
+//         <div class="carta__cara carta__cara_trasera">
+//             <div class="carta__contenido-trasero">
+//                 <h1 class="carta__nombre-personaje">Bruja</h1>
+//                 <p class="carta__descripcion">
+//                     Invoca esqueletos y dispara rayos destructores. Por desgracia,
+//                     sus brillantes ojos de color rosa no disparan rayos láser.
+//                 </p>
+//                 <img class="carta__icono-clash" src="https://i.ibb.co/Q65LCnk/icono.png" />
+//             </div>
+//         </div>
+//     </article><--Ccarta_Epica--
+//     <article class="carta carta_especial">
+//         <div class="carta__cara carta__cara_delantera">
+//             <span class="carta__cantidad-elixir">3</span>
+//             <figure class="carta__contenido-delantero">
+//                 <img class="carta__ilustracion" src="https://i.ibb.co/PrJn44M/golem.png" />
+//                 <figcaption class="carta__nivel"> Nivel 12</figcaption>
+//             </figure>
+//         </div>
+//         <div class="carta__cara carta__cara_trasera">
+//             <div class="carta__contenido-trasero">
+//                 <h1 class="carta__nombre-personaje">Gólem de Elixir</h1>
+//                 <p class="carta__descripcion">
+//                     "Al ser destruido, se divide en dos golemitas de elixir,que,al ser destruuidos,
+//                     se dividen en dos pegotes de elixir. !Cuando tu rival acabe con un pegote,
+//                     recibira una gota de elixir"
+//                 </p>
+//                 <img class="carta__icono-clash" src="https://i.ibb.co/Q65LCnk/icono.png" />
+//             </div>
+//         </div>
+//     </article><--Carta Especial--
+//     <article class="carta carta_comun">
+//         <div class="carta__cara carta__cara_delantera">
+//             <span class="carta__cantidad-elixir">5</span>
+//             <figure class="carta__contenido-delantero">
+//                 <img class="carta__ilustracion" src="https://i.ibb.co/ySzdgvR/los-pillos.png" />
+//                 <figcaption class="carta__nivel">Nivel 12</figcaption>
+//             </figure>
+//         </div>
+//         <div class="carta__cara carta__cara_trasera">
+//             <div class="carta__contenido-trasero">
+//                 <h1 class="carta__nombre-personaje">Pillos</h1>
+//                 <p class="carta__descripcion">
+//                     ¡Libera a un trío de pillos de lo más travieso! El chico toma la delantera,
+//                     mientras que las chicas acribillan a los enemigos desde la retaguardia ¡lanzando
+//                     bolas de chicle con sus tirachinas!
+//                 </p>
+//                 <img class="carta__icono-clash" src="https://i.ibb.co/Q65LCnk/icono.png" />
+//             </div>
+//         </div>
+//     </article><-- Carta Comun  --
+// -->
