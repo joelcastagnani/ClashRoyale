@@ -108,6 +108,7 @@ body {
 }
 .main__main-container {
   width: 80%;
+  border: white 1px solid;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -115,6 +116,7 @@ body {
 .main__main-container__deck {
   width: 242px;
   height: 144px;
+  border: white solid 1px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -130,6 +132,16 @@ body {
   width: 100%;
   position: relative;
   padding-right: 0.5rem;
+}
+.main__main-container__alert {
+  color: white;
+  border: white solid 1px;
+  display: none;
+}
+.main__main-container__alertNew {
+  color: white;
+  border: white solid 1px;
+  display: flex;
 }
 
 .troopCard {

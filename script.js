@@ -622,7 +622,9 @@ function addCardToDeck(e, cards) {
     let cardToAdd = cards.find(card => card.id === cardId);
 
     if (cardPositionInDeck !== -1) {
-        alert(`La carta ya está en el mazo`);
+        let element = document.getElementById("mainAlertContainer");
+        element.innerHTML = "la carta ya esta en el mazo";
+        element.classList.replace("main__main-container__alert", "main__main-container__alertNew");
     } else if (deck.length < 8) {
         deck.push({
             id: cardToAdd.id,
@@ -630,7 +632,9 @@ function addCardToDeck(e, cards) {
             tipo: cardToAdd.tipo
         });
     } else {
-        alert(`El mazo ya está lleno (máximo 8 cartas)`);
+        let element = document.getElementById("mainAlertContainer");
+        element.innerHTML = "El mazo ya está lleno (máximo 8 cartas)";
+        element.classList.replace("main__main-container__alert", "main__main-container__alertNew");
     }
 
     localStorage.setItem("deck", JSON.stringify(deck));//1-PRIMERO TENES QUE STRINGIFEAR UN EL MAZO, Y DESPUES SETEARLO EL STORAGE
@@ -672,9 +676,11 @@ function removeCardFromDeck(cardId) {
         deck.splice(cardIndex, 1); // Remove the card from the deck array
         localStorage.setItem("deck", JSON.stringify(deck)); // Update the local storage with the modified deck
         renderDeck(deck); // Re-render the deck to reflect the changes
-    } else {
-        alert("La carta no está en el mazo");
     }
+
+    let element = document.getElementById("mainAlertContainer");
+    element.innerHTML = "la carta ya esta en el mazo";
+    element.classList.replace("main__main-container__alertNew", "main__main-container__alert");
 }
 function renderEmpty(elementId) {
     let element = document.getElementById(elementId);
@@ -685,6 +691,10 @@ function resetDeck() {
     deck.length = 0; // Reset deck array to empty
     resetDeckLS();
     renderDeck(deck);
+
+    let element = document.getElementById("mainAlertContainer");
+    element.innerHTML = "";
+    element.classList.replace("main__main-container__alertNew", "main__main-container__alert");
 }
 
 mainFunction(cardsArray);
