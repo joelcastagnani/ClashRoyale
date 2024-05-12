@@ -555,15 +555,29 @@ const cardsArray = [
     }
 ];
 
-function mainFunction(cards) {  
-    let deck = [];
+function mainFunction(cards) {
+    let deck = getDeckLS();
     let mainSearchButton = document.getElementById("mainSearchButton");
     let resetButton = document.getElementById("resetButton");
+
+    renderDeck(deck);
 
     mainSearchButton.addEventListener("click", () => filterAndRender(cards, deck));
     resetButton.addEventListener("click", () => resetDeck(deck));
 
     renderCards(cards, deck);
+}
+function getDeckLS() {
+    let deck = [];
+    let deckLS = JSON.parse(localStorage.getItem("deck"));
+    if (deckLS) {
+        deck = deckLS;
+    }
+    return deck;
+}
+function resetDeckLS() {
+    localStorage.removeItem("deck");
+    renderDeck([]);
 }
 function filterAndRender(cards, deck) {
     let filteredCards = filterCards(cards);
@@ -611,6 +625,7 @@ function addCardToDeck(e, cards, deck) {
         alert(`El mazo ya está lleno (máximo 8 cartas)`);
     }
 
+    localStorage.setItem("deck", JSON.stringify(deck));//1-PRIMERO TENES QUE STRINGIFEAR UN EL MAZO, Y DESPUES SETEARLO EL STORAGE
     renderDeck(deck);
 }
 function renderDeck(deck) {
@@ -644,8 +659,9 @@ function removeCardFromDeck(cardId, deck) {
     let cardIndex = deck.findIndex(card => card.id === cardId);
 
     if (cardIndex !== -1) {
-        deck.splice(cardIndex, 1);
-        renderDeck(deck);
+        deck.splice(cardIndex, 1); // Remove the card from the deck array
+        localStorage.setItem("deck", JSON.stringify(deck)); // Update the local storage with the modified deck
+        renderDeck(deck); // Re-render the deck to reflect the changes
     } else {
         alert("La carta no está en el mazo");
     }
@@ -656,13 +672,8 @@ function renderEmpty(elementId) {
 }
 function resetDeck(deck) {
     deck.length = 0; // Reset the deck array to empty
+    resetDeckLS();
     renderDeck(deck);
 }
 
 mainFunction(cardsArray);
-
-
-
-
-
-
