@@ -599,15 +599,13 @@ function renderCards(cards) {
     mainCardsContainer.innerHTML = "";
 
     cards.forEach(card => {
-        let cardContainer = document.createElement("div");
+        let cardContainer = document.createElement("article");
 
-        cardContainer.className = "troopCard";
+        cardContainer.className = "cardContainer cardContainerCards";
         cardContainer.innerHTML = `
-        <article class=cardContainer>
             <img src=./img/background.png>
+            <button class="button" id="addCardToDeckButton${card.id}">AGREGAR</button>
             <img src=./img/png/megacaballero.png>
-        </article>
-        <button class="button" id="addCardToDeckButton${card.id}">Agregar</button>
         `;
         mainCardsContainer.appendChild(cardContainer);
 
@@ -647,15 +645,12 @@ function renderDeck() {
     deckContainer.innerHTML = "";
 
     deck.forEach(card => {
-        let cardContainer = document.createElement("div");
-        cardContainer.classList = "troopCard";
-
+        let cardContainer = document.createElement("article");
+        cardContainer.classList = "cardContainerDeck cardContainer";
         cardContainer.innerHTML = `
-        <article class=cardContainerDeck>
             <img src=./img/background.png>
+            <button class="deleteButton" id="eliminar${card.id}">ELIMINAR</button>
             <img src=./img/png/megacaballero.png>
-        </article>
-        <button class="button" id="eliminar${card.id}">ELIMINAR</button>
         `;
 
         if (cont < 8) {

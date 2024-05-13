@@ -134,19 +134,20 @@ body {
         align-items: center;
 
         &__deck {
-            width: 242px;
-            height: 144px;
-            border: white solid 1px;
+            width: 400px;
+            height: 294px;
+            border: 1px solid white;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
+            margin-bottom: .5rem;
+            padding-bottom: .5rem;
         }
         &__reset-button {
-            color: white;
             margin: 1rem;
         }
         &__cards {
-            // border: 1px solid white;
+            //border: 1px solid white;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
@@ -167,25 +168,23 @@ body {
     }
 }
 
-.troopCard {
-    position: relative;
-}
-
 .button {
     padding: .1rem;
     border-radius: 5px;
-    background-color: transparent;
-    font-size: 7px;
+    background-color: white;
+    font-size: 10px;
     border: none;
-    margin-bottom: .4rem;
     position: absolute;
-    z-index: 1;
-    top: 20px;
+    top: 150px;
+    left: 21px;
+    width: 60px;
+    height: 20px;
     &:hover {
         background-color: #292e36;
         transition: .1s;
     }
 }
+
 .optionButton {
     width: 90%;
     padding-top: .3rem;
@@ -201,19 +200,18 @@ body {
         transition: .1s;
     }
 }
+.deleteButton{
+    width:  40px;
+    height: 15px;
+    font-size: 7px;
+    margin-top: 5px;
+}
 
-.cardContainer{
-    position: relative;
-    width: 50px;//250
-    transition: all .3s ease;
-    padding: .1rem;
-    padding-top: .5rem;
-    img:first-child{
-        box-shadow: 0 60px 60px -60px rgba(0, 30, 255, 0.5);
-        border-radius: 4px;
-        object-fit: cover;
-        width: 100%;
-    }
+
+
+.cardContainerCards{
+    width: 100px;
+    margin-bottom: 30px;
     img:last-child{
         position: absolute;
         width: 40px;
@@ -238,10 +236,10 @@ body {
     &::before{
         content: '';
         position: absolute;
-        bottom: 0;
+        bottom: .8;
         height: 100%;
         width: 100%;
-        background-image: 
+        background-image:
         linear-gradient(
             to bottom,
             transparent 10%,
@@ -253,22 +251,14 @@ body {
     }
 }
 .cardContainerDeck{
-    position: relative;
-    width: 40px;//250
-    transition: all .3s ease;
+    width: 80px;
+    margin-top: .3rem;
     margin-left: .5rem;
     margin-right: .5rem;
-    margin-top: .3rem;
-    img:first-child{
-        box-shadow: 0 60px 60px -60px rgba(0, 30, 255, 0.5);
-        border-radius: 4px;
-        object-fit: cover;
-        width: 100%;
-    }
     img:last-child{
         position: absolute;
         width: 40px;
-        bottom: 5px;
+        bottom: 25px;
         left: 0;
         right: 0;
         margin: auto;
@@ -289,10 +279,10 @@ body {
     &::before{
         content: '';
         position: absolute;
-        bottom: 0;
+        bottom: 20px;
         height: 100%;
         width: 100%;
-        background-image: 
+        background-image:
         linear-gradient(
             to bottom,
             transparent 10%,
@@ -301,5 +291,18 @@ body {
         );
         opacity: 0;
         transition: all .3s ease;
+    }
+}
+.cardContainer{
+    position: relative;
+    transition: all .3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img:first-child{
+        box-shadow: 0 60px 60px -60px rgba(0, 30, 255, 0.5);
+        border-radius: 4px;
+        object-fit: cover;
+        width: 100%;
     }
 }
