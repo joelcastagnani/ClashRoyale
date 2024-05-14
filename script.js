@@ -594,25 +594,6 @@ function filterCards(cards) {
     let mainSearchInput = document.getElementById("mainSearchInput");
     return cards.filter(card => card.nombre.includes(mainSearchInput.value));
 }
-function renderCards(cards) {
-    let mainCardsContainer = document.getElementById("mainCardsContainer");
-    mainCardsContainer.innerHTML = "";
-
-    cards.forEach(card => {
-        let cardContainer = document.createElement("article");
-
-        cardContainer.className = "cardContainer cardContainerCards";
-        cardContainer.innerHTML = `
-            <img src=./img/background.png>
-            <button class="button" id="addCardToDeckButton${card.id}">AGREGAR</button>
-            <img src=./img/png/megacaballero.png>
-        `;
-        mainCardsContainer.appendChild(cardContainer);
-
-        let addCardToDeckButton = document.getElementById("addCardToDeckButton" + card.id);
-        addCardToDeckButton.addEventListener("click", (e) => addCardToDeck(e, cards));
-    });
-}
 function addCardToDeck(e, cards) {
     let deck = getDeckLS();
     let cardId = Number(e.target.id.substring(19));
@@ -637,31 +618,6 @@ function addCardToDeck(e, cards) {
 
     localStorage.setItem("deck", JSON.stringify(deck));//1-PRIMERO TENES QUE STRINGIFEAR UN EL MAZO, Y DESPUES SETEARLO EL STORAGE
     renderDeck(deck);
-}
-function renderDeck() {
-    let deck = getDeckLS();
-    let cont = 0;
-    let deckContainer = document.getElementById("mainDeckContainer");
-    deckContainer.innerHTML = "";
-
-    deck.forEach(card => {
-        let cardContainer = document.createElement("article");
-        cardContainer.classList = "cardContainerDeck cardContainer";
-        cardContainer.innerHTML = `
-            <img src=./img/background.png>
-            <button class="deleteButton" id="eliminar${card.id}">ELIMINAR</button>
-            <img src=./img/png/megacaballero.png>
-        `;
-
-        if (cont < 8) {
-            deckContainer.appendChild(cardContainer);
-
-            let eliminarButton = document.getElementById("eliminar" + card.id);
-            eliminarButton.addEventListener("click", () => removeCardFromDeck(card.id, deck));
-        } else {
-            alert(`El mazo ya esta yeno`);
-        }
-    });
 }
 function removeCardFromDeck(cardId) {
     let deck = getDeckLS();
@@ -690,6 +646,50 @@ function resetDeck() {
     let element = document.getElementById("mainAlertContainer");
     element.innerHTML = "";
     element.classList.replace("main__main-container__alertNew", "main__main-container__alert");
+}
+function renderCards(cards) {
+    let mainCardsContainer = document.getElementById("mainCardsContainer");
+    mainCardsContainer.innerHTML = "";
+
+    cards.forEach(card => {
+        let cardContainer = document.createElement("article");
+
+        cardContainer.className = "cardContainer cardContainerCards";
+        cardContainer.innerHTML = `
+            <img src=./img/background.png>
+            <button class="addButton button" id="addCardToDeckButton${card.id}">AGREGAR</button>
+            <img src=./img/png/megacaballero.png>
+        `;
+        mainCardsContainer.appendChild(cardContainer);
+
+        let addCardToDeckButton = document.getElementById("addCardToDeckButton" + card.id);
+        addCardToDeckButton.addEventListener("click", (e) => addCardToDeck(e, cards));
+    });
+}
+function renderDeck() {
+    let deck = getDeckLS();
+    let cont = 0;
+    let deckContainer = document.getElementById("mainDeckContainer");
+    deckContainer.innerHTML = "";
+
+    deck.forEach(card => {
+        let cardContainer = document.createElement("article");
+        cardContainer.classList = "cardContainerDeck cardContainer";
+        cardContainer.innerHTML = `
+            <img src=./img/background.png>
+            <button class="deleteButton button" id="eliminar${card.id}">ELIMINAR</button>
+            <img src=./img/png/megacaballero.png>
+        `;
+
+        if (cont < 8) {
+            deckContainer.appendChild(cardContainer);
+
+            let eliminarButton = document.getElementById("eliminar" + card.id);
+            eliminarButton.addEventListener("click", () => removeCardFromDeck(card.id, deck));
+        } else {
+            alert(`El mazo ya esta yeno`);
+        }
+    });
 }
 
 mainFunction(cardsArray);
