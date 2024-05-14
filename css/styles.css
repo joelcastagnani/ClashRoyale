@@ -222,6 +222,7 @@ body {
 
 .cardContainerDeck {
   width: 80px;
+  height: 50%;
   margin-top: 0.3rem;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
