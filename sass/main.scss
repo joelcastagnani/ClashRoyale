@@ -26,22 +26,7 @@ body {
     background-color: #010409;
     display: flex;
     align-items: center;
-
-    &__icon {
-        //border: .5px solid white;
-
-        color: white;
-        font-size: 30px;
-        padding: .5rem;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-
-        &:hover {
-            scale: 120%;
-            transition: 0.5s;
-        }
-    }
-
+    padding-top: .5rem;
     &__span-contenedor {
         //border: .5px solid white;
 
@@ -72,7 +57,13 @@ body {
             font-size: 13px;
         }
     }
-
+    &__logo{
+        width: 45px;
+        &:hover {
+            scale: 120%;
+            transition: 0.5s;
+        }
+    }
 }
 .navbar2 {
     background-color: #010409;
@@ -189,7 +180,7 @@ body {
 }
 .cardContainerDeck{
     width: 80px;
-    height: 41%;
+    height: 42%;
     margin-top: .3rem;
     margin-left: .5rem;
     margin-right: .5rem;
@@ -200,7 +191,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid white;
+    //border: 1px solid white;
     img:nth-child(1){
         box-shadow: 0 60px 60px -60px rgba(0, 30, 255, 0.5);
         border-radius: 4px;
@@ -231,7 +222,6 @@ body {
     &::before{
         content: '';
         position: absolute;
-        // bottom: 0;
         height: 100%;
         width: 100%;
         background-image:

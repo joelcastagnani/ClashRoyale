@@ -26,17 +26,7 @@ body {
   background-color: #010409;
   display: flex;
   align-items: center;
-}
-.navbar1__icon {
-  color: white;
-  font-size: 30px;
-  padding: 0.5rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-.navbar1__icon:hover {
-  scale: 120%;
-  transition: 0.5s;
+  padding-top: 0.5rem;
 }
 .navbar1__span-contenedor {
   display: flex;
@@ -58,6 +48,13 @@ body {
 .navbar1__span-contenedor__span2 {
   color: rgba(255, 255, 255, 0.397);
   font-size: 13px;
+}
+.navbar1__logo {
+  width: 45px;
+}
+.navbar1__logo:hover {
+  scale: 120%;
+  transition: 0.5s;
 }
 
 .navbar2 {
@@ -168,7 +165,7 @@ body {
 
 .cardContainerDeck {
   width: 80px;
-  height: 41%;
+  height: 42%;
   margin-top: 0.3rem;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
@@ -180,7 +177,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid white;
 }
 .cardContainer img:nth-child(1) {
   box-shadow: 0 60px 60px -60px rgba(0, 30, 255, 0.5);

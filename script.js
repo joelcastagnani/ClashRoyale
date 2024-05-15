@@ -658,7 +658,7 @@ function renderCards(cards) {
         cardContainer.innerHTML = `
             <img src=./img/background.png>
             <button class="addButton button" id="addCardToDeckButton${card.id}">AGREGAR</button>
-            <img src=./img/png/megacaballero.png>
+            <img src=./img/png/${card.id}.png>
         `;
         mainCardsContainer.appendChild(cardContainer);
 
@@ -678,7 +678,7 @@ function renderDeck() {
         cardContainer.innerHTML = `
             <img src=./img/background.png>
             <button class="deleteButton button" id="eliminar${card.id}">ELIMINAR</button>
-            <img src=./img/png/megacaballero.png>
+            <img src=./img/png/${card.id}.png>
         `;
 
         if (cont < 8) {
