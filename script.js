@@ -573,6 +573,8 @@ function mainFunction(cards) {
         }
     });
 
+    filterByAndRender(cards);
+
     renderCards(cards);
 }
 function getDeckLS() {
@@ -658,44 +660,6 @@ function resetDeck() {
 
     renderCards(cards)
 }
-// function renderCards(cards) {
-//     let deck = getDeckLS();
-
-//     let mainCardsContainer = document.getElementById("mainCardsContainer");
-//     mainCardsContainer.innerHTML = "";
-
-//     cards.forEach(card => {
-//         let cardContainer = document.createElement("article");
-//         cardContainer.className = "cardContainer cardContainerCards";
-
-//         let img = "";
-//         if (card.tipo === "Común") {
-//             img = "./img/png/comun.png";
-//         }else if (card.tipo === "Épica") {
-//             img = "./img/png/epica.png";
-//         }else if (card.tipo === "Legendaria") {
-//             img = "./img/png/legendaria.png";
-//         }else if (card.tipo === "Rara") {
-//             img = "./img/png/rara.png";
-//         }
-
-//         cardContainer.innerHTML = `
-//             <img src=./img/background.png>
-//             <div class=cardContainer__text>
-//                 <div>${card.nombre}</div>
-//                 <div>id:${card.id}</div>
-//             </div>
-//             <img class=cardContainer__type src=${img}>
-//             <button class="addButton button" id="addCardToDeckButton${card.id}">AGREGAR</button>
-//             <img src=./img/png/${card.id}.png>
-//         `;
-
-//         mainCardsContainer.appendChild(cardContainer);
-
-//         let addCardToDeckButton = document.getElementById("addCardToDeckButton" + card.id);
-//         addCardToDeckButton.addEventListener("click", (e) => addCardToDeck(e, cards));
-//     });
-// }
 function renderCards(cards) {
     let deck = getDeckLS();
     let mainCardsContainer = document.getElementById("mainCardsContainer");
@@ -778,6 +742,17 @@ function renderDeck() {
         } else {
             alert(`El mazo ya esta yeno`);
         }
+    });
+}
+
+function filterByAndRender(cards) {
+    let typeButton = document.getElementById("tipo");
+    typeButton.addEventListener("click", () => {
+        let typeCards = cards.filter(card => card.tipo === "Rara");
+        // for (let i = 0; i < typeCards.length; i++) {
+        //     alert(typeCards[i].nombre);
+        // }
+        renderCards(typeCards);
     });
 }
 
