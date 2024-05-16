@@ -572,7 +572,7 @@ function mainFunction(cards) {
         }
     });
 
-    renderCards(cards, deck);
+    renderCards(cards);
 }
 function getDeckLS() {
     let deck = [];
@@ -608,8 +608,12 @@ function addCardToDeck(e, cards) {
         deck.push({
             id: cardToAdd.id,
             nombre: cardToAdd.nombre,
-            tipo: cardToAdd.tipo
+            tipo: cardToAdd.tipo,
+            vida: cardToAdd.vida,
+            daño: cardToAdd.daño,
+            inDeck: true
         });
+        cardToAdd.inDeck = true;
     } else {
         let element = document.getElementById("mainAlertContainer");
         element.innerHTML = "El mazo ya está lleno (máximo 8 cartas)";
@@ -618,6 +622,7 @@ function addCardToDeck(e, cards) {
 
     localStorage.setItem("deck", JSON.stringify(deck));//1-PRIMERO TENES QUE STRINGIFEAR UN EL MAZO, Y DESPUES SETEARLO EL STORAGE
     renderDeck(deck);
+    renderCardsExeptDeck(cards);
 }
 function removeCardFromDeck(cardId) {
     let deck = getDeckLS();
@@ -627,6 +632,7 @@ function removeCardFromDeck(cardId) {
         deck.splice(cardIndex, 1); // Remove the card from the deck array
         localStorage.setItem("deck", JSON.stringify(deck)); // Update the local storage with the modified deck
         renderDeck(deck); // Re-render the deck to reflect the changes
+        deck[cardIndex].inDeck = false;
     }
 
     let element = document.getElementById("mainAlertContainer");
@@ -657,6 +663,11 @@ function renderCards(cards) {
         cardContainer.className = "cardContainer cardContainerCards";
         cardContainer.innerHTML = `
             <img src=./img/background.png>
+            <div class=cardContainer__text>
+                <div><i class="bi bi-dot"></i>${card.nombre}</div>
+                <div><i class="bi bi-dot"></i>${card.tipo}</div>
+                <div><i class="bi bi-dot"></i>id:${card.id}</div>
+            </div>
             <button class="addButton button" id="addCardToDeckButton${card.id}">AGREGAR</button>
             <img src=./img/png/${card.id}.png>
         `;
@@ -677,6 +688,11 @@ function renderDeck() {
         cardContainer.classList = "cardContainerDeck cardContainer";
         cardContainer.innerHTML = `
             <img src=./img/background.png>
+            <div class=cardContainer__text>
+                <div><i class="bi bi-dot"></i>${card.nombre}</div>
+                <div><i class="bi bi-dot"></i>${card.tipo}</div>
+                <div><i class="bi bi-dot"></i>id:${card.id}</div>
+            </div>
             <button class="deleteButton button" id="eliminar${card.id}">ELIMINAR</button>
             <img src=./img/png/${card.id}.png>
         `;
@@ -693,3 +709,4 @@ function renderDeck() {
 }
 
 mainFunction(cardsArray);
+
