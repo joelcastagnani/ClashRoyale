@@ -665,9 +665,9 @@ function renderCards(cards) {
             <img src=./img/background.png>
             <div class=cardContainer__text>
                 <div>${card.nombre}</div>
-                <div>${card.tipo}</div>
                 <div>id:${card.id}</div>
             </div>
+            <img class=cardContainer__type src=./img/png/comun.png>
             <button class="addButton button" id="addCardToDeckButton${card.id}">AGREGAR</button>
             <img src=./img/png/${card.id}.png>
         `;
@@ -690,9 +690,9 @@ function renderDeck() {
             <img src=./img/background.png>
             <div class=cardContainer__text>
                 <div>${card.nombre}</div>
-                <div>${card.tipo}</div>
                 <div>id:${card.id}</div>
             </div>
+            <img class=cardContainer__type src=./img/png/comun.png>
             <button class="deleteButton button" id="eliminar${card.id}">ELIMINAR</button>
             <img src=./img/png/${card.id}.png>
         `;
