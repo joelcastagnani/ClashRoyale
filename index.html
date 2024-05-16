@@ -3,67 +3,70 @@
 
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-        <link rel="stylesheet" href="./css/styles.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-            rel="stylesheet">
-    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
 
-    <body>
-        <nav class="navbar1">
-            <img src="./img/png/logo.png" class="navbar1__logo">
-            <div class="navbar1__span-contenedor">
-                <span class="navbar1__span-contenedor__span1">JoelCastagnani /</span>
-                <span class="navbar1__span-contenedor__span2">3er pre entrega - JS - Coderhouse</span>
-            </div>
-        </nav>
-        <nav class="navbar2">
-            <div class="navbar2__button">
-                <i class="bi bi-code navbar2__button_icon"></i>
-                <span class="navbar2__button_span">Code</span>
-            </div>
-            <div class="navbar2__button">
-                <i class="bi bi-file-earmark-text navbar2__button_icon"></i>
-                <span class="navbar2__button_span">Files</span>
-            </div>
-            <div class="navbar2__button">
-                <i class="bi bi-filetype-html navbar2__button_icon"></i>
-                <span class="navbar2__button_span">HTML</span>
-            </div>
-            <div class="navbar2__button">
-                <i class="bi bi-filetype-js navbar2__button_icon"></i>
-                <span class="navbar2__button_span">JS</span>
-            </div>
-            <div class="navbar2__button">
-                <i class="bi bi-filetype-scss navbar2__button_icon"></i>
-                <span class="navbar2__button_span">SCSS</span>
-            </div>
-        </nav>
-        <main class="main">
-            <section class="main__options">
-                <input id="mainSearchInput" placeholder="Buscar por nombre">
-                <button id="mainSearchButton" class="optionButton">Buscar carta</button>
-            </section>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+</head>
 
-            <section class="main__main-container" id="mainMainContainer">
-                <div class="main__main-container__deck" id="mainDeckContainer"></div>
-                <div class="main__main-container__alert" id="mainAlertContainer">NO</div>
-                <button class="main__main-container__reset-button" id="resetButton">RESETEAR</button>
-                <div class="main__main-container__cards" id="mainCardsContainer"></div>
-            </section> 
-        </main>
+<body>
+    <nav class="navbar1">
+        <img src="./img/png/logo.png" class="navbar1__logo">
+        <div class="navbar1__span-contenedor">
+            <span class="navbar1__span-contenedor__span1">JoelCastagnani /</span>
+            <span class="navbar1__span-contenedor__span2">3er pre entrega - JS - Coderhouse</span>
+        </div>
+    </nav>
+    <nav class="navbar2">
+        <div class="navbar2__button">
+            <i class="bi bi-code navbar2__button_icon"></i>
+            <span class="navbar2__button_span">Code</span>
+        </div>
+        <div class="navbar2__button">
+            <i class="bi bi-file-earmark-text navbar2__button_icon"></i>
+            <span class="navbar2__button_span">Files</span>
+        </div>
+        <div class="navbar2__button">
+            <i class="bi bi-filetype-html navbar2__button_icon"></i>
+            <span class="navbar2__button_span">HTML</span>
+        </div>
+        <div class="navbar2__button">
+            <i class="bi bi-filetype-js navbar2__button_icon"></i>
+            <span class="navbar2__button_span">JS</span>
+        </div>
+        <div class="navbar2__button">
+            <i class="bi bi-filetype-scss navbar2__button_icon"></i>
+            <span class="navbar2__button_span">SCSS</span>
+        </div>
+    </nav>
+    <main class="main">
+        <section class="main__options">
+            <input id="mainSearchInput" placeholder="Buscar por nombre">
+            <button id="mainSearchButton" class="optionButton">Buscar carta</button>
+        </section>
 
-        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> -->
-        <script src="script.js"></script>
-    </body>
+        <section class="main__main-container" id="mainMainContainer">
+            <div class="main__main-container__deck" id="mainDeckContainer"></div>
+            <div class="main__main-container__alert" id="mainAlertContainer">NO</div>
+            <button class="main__main-container__reset-button" id="resetButton">RESETEAR</button>
+            <div class="main__main-container__cards" id="mainCardsContainer"></div>
+        </section>
+    </main>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> -->
+    <script src="script.js"></script>
+</body>
 
 </html>
-

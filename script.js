@@ -294,15 +294,6 @@ const cardsArray = [
     },
 
     {
-        nombre: "Fénix",
-        vida: 1750, // Vida inicial
-        daño: 110, // Daño por golpe
-        id: 33,
-        tipo: "Rara",
-        inDeck: false
-    },
-
-    {
         nombre: "Furia",
         vida: 0, // No tiene vida (es un hechizo)
         daño: 0, // No causa daño
@@ -552,7 +543,16 @@ const cardsArray = [
         id: 61,
         tipo: "Común",
         inDeck: false
-    }
+    },
+
+    {
+        nombre: "Fénix",
+        vida: 1750, // Vida inicial
+        daño: 110, // Daño por golpe
+        id: 62,
+        tipo: "Rara",
+        inDeck: false
+    },
 ];
 
 function mainFunction(cards) {
@@ -664,9 +664,9 @@ function renderCards(cards) {
         cardContainer.innerHTML = `
             <img src=./img/background.png>
             <div class=cardContainer__text>
-                <div><i class="bi bi-dot"></i>${card.nombre}</div>
-                <div><i class="bi bi-dot"></i>${card.tipo}</div>
-                <div><i class="bi bi-dot"></i>id:${card.id}</div>
+                <div>${card.nombre}</div>
+                <div>${card.tipo}</div>
+                <div>id:${card.id}</div>
             </div>
             <button class="addButton button" id="addCardToDeckButton${card.id}">AGREGAR</button>
             <img src=./img/png/${card.id}.png>
@@ -689,9 +689,9 @@ function renderDeck() {
         cardContainer.innerHTML = `
             <img src=./img/background.png>
             <div class=cardContainer__text>
-                <div><i class="bi bi-dot"></i>${card.nombre}</div>
-                <div><i class="bi bi-dot"></i>${card.tipo}</div>
-                <div><i class="bi bi-dot"></i>id:${card.id}</div>
+                <div>${card.nombre}</div>
+                <div>${card.tipo}</div>
+                <div>id:${card.id}</div>
             </div>
             <button class="deleteButton button" id="eliminar${card.id}">ELIMINAR</button>
             <img src=./img/png/${card.id}.png>
