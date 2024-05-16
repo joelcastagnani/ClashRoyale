@@ -290,6 +290,7 @@ const cardsArray = [
         nombre: "Verdugo",
         vida: 2300,
         daño: 170,
+        tipo: "Épica",
         id: 33
     },
 
@@ -622,7 +623,8 @@ function addCardToDeck(e, cards) {
 
     localStorage.setItem("deck", JSON.stringify(deck));//1-PRIMERO TENES QUE STRINGIFEAR UN EL MAZO, Y DESPUES SETEARLO EL STORAGE
     renderDeck(deck);
-    renderCardsExeptDeck(cards);
+    renderEmpty("mainCardsContainer");
+    renderCards(cards)
 }
 function removeCardFromDeck(cardId) {
     let deck = getDeckLS();
@@ -632,11 +634,11 @@ function removeCardFromDeck(cardId) {
         deck.splice(cardIndex, 1); // Remove the card from the deck array
         localStorage.setItem("deck", JSON.stringify(deck)); // Update the local storage with the modified deck
         renderDeck(deck); // Re-render the deck to reflect the changes
+        renderCards(cardsArray);
         deck[cardIndex].inDeck = false;
     }
 
     let element = document.getElementById("mainAlertContainer");
-    element.innerHTML = "la carta ya esta en el mazo";
     element.classList.replace("main__main-container__alertNew", "main__main-container__alert");
 }
 function renderEmpty(elementId) {
@@ -648,45 +650,92 @@ function resetDeck() {
     deck.length = 0; // Reset deck array to empty
     resetDeckLS();
     renderDeck(deck);
+    renderCards(cardsArray);
 
     let element = document.getElementById("mainAlertContainer");
     element.innerHTML = "";
     element.classList.replace("main__main-container__alertNew", "main__main-container__alert");
+
+    renderCards(cards)
 }
+// function renderCards(cards) {
+//     let deck = getDeckLS();
+
+//     let mainCardsContainer = document.getElementById("mainCardsContainer");
+//     mainCardsContainer.innerHTML = "";
+
+//     cards.forEach(card => {
+//         let cardContainer = document.createElement("article");
+//         cardContainer.className = "cardContainer cardContainerCards";
+
+//         let img = "";
+//         if (card.tipo === "Común") {
+//             img = "./img/png/comun.png";
+//         }else if (card.tipo === "Épica") {
+//             img = "./img/png/epica.png";
+//         }else if (card.tipo === "Legendaria") {
+//             img = "./img/png/legendaria.png";
+//         }else if (card.tipo === "Rara") {
+//             img = "./img/png/rara.png";
+//         }
+
+//         cardContainer.innerHTML = `
+//             <img src=./img/background.png>
+//             <div class=cardContainer__text>
+//                 <div>${card.nombre}</div>
+//                 <div>id:${card.id}</div>
+//             </div>
+//             <img class=cardContainer__type src=${img}>
+//             <button class="addButton button" id="addCardToDeckButton${card.id}">AGREGAR</button>
+//             <img src=./img/png/${card.id}.png>
+//         `;
+
+//         mainCardsContainer.appendChild(cardContainer);
+
+//         let addCardToDeckButton = document.getElementById("addCardToDeckButton" + card.id);
+//         addCardToDeckButton.addEventListener("click", (e) => addCardToDeck(e, cards));
+//     });
+// }
 function renderCards(cards) {
+    let deck = getDeckLS();
     let mainCardsContainer = document.getElementById("mainCardsContainer");
     mainCardsContainer.innerHTML = "";
 
     cards.forEach(card => {
-        let cardContainer = document.createElement("article");
-        cardContainer.className = "cardContainer cardContainerCards";
+        let flag = false;
+        deck.forEach(element => {
+            if (card.id === element.id) {
+                flag = true;
+            }
+        });
 
-        let img = "";
-        if (card.tipo === "Común") {
-            img = "./img/png/comun.png";
-        }else if (card.tipo === "Épica") {
-            img = "./img/png/epica.png";
-        }else if (card.tipo === "Legendaria") {
-            img = "./img/png/legendaria.png";
-        }else if (card.tipo === "Rara") {
-            img = "./img/png/rara.png";
+        if (flag === false) {
+            let cardContainer = document.createElement("article");
+            cardContainer.className = "cardContainer cardContainerCards";
+            let img = "";
+            if (card.tipo === "Común") {
+                img = "./img/png/comun.png";
+            } else if (card.tipo === "Épica") {
+                img = "./img/png/epica.png";
+            } else if (card.tipo === "Legendaria") {
+                img = "./img/png/legendaria.png";
+            } else if (card.tipo === "Rara") {
+                img = "./img/png/rara.png";
+            }
+            cardContainer.innerHTML = `
+                <img src=./img/background.png>
+                <div class=cardContainer__text>
+                    <div>${card.nombre}</div>
+                    <div>id:${card.id}</div>
+                </div>
+                <img class=cardContainer__type src=${img}>
+                <button class="addButton button" id="addCardToDeckButton${card.id}">AGREGAR</button>
+                <img src=./img/png/${card.id}.png>
+            `;
+            mainCardsContainer.appendChild(cardContainer);
+            let addCardToDeckButton = document.getElementById("addCardToDeckButton" + card.id);
+            addCardToDeckButton.addEventListener("click", (e) => addCardToDeck(e, cards));
         }
-
-        cardContainer.innerHTML = `
-            <img src=./img/background.png>
-            <div class=cardContainer__text>
-                <div>${card.nombre}</div>
-                <div>id:${card.id}</div>
-            </div>
-            <img class=cardContainer__type src=${img}>
-            <button class="addButton button" id="addCardToDeckButton${card.id}">AGREGAR</button>
-            <img src=./img/png/${card.id}.png>
-        `;
-
-        mainCardsContainer.appendChild(cardContainer);
-
-        let addCardToDeckButton = document.getElementById("addCardToDeckButton" + card.id);
-        addCardToDeckButton.addEventListener("click", (e) => addCardToDeck(e, cards));
     });
 }
 function renderDeck() {
@@ -702,11 +751,11 @@ function renderDeck() {
         let img = "";
         if (card.tipo === "Común") {
             img = "./img/png/comun.png";
-        }else if (card.tipo === "Épica") {
+        } else if (card.tipo === "Épica") {
             img = "./img/png/epica.png";
-        }else if (card.tipo === "Legendaria") {
+        } else if (card.tipo === "Legendaria") {
             img = "./img/png/legendaria.png";
-        }else if (card.tipo === "Rara") {
+        } else if (card.tipo === "Rara") {
             img = "./img/png/rara.png";
         }
 

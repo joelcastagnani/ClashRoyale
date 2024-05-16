@@ -22,6 +22,20 @@ body {
     margin-bottom: 1rem;
 }
 
+@keyframes card-appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+        /* Initial position for animation */
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        /* Final position for animation */
+    }
+}
+
 .navbar1 {
     display: flex;
     justify-content: start;
@@ -202,6 +216,7 @@ body {
     margin-top: .3rem;
     margin-left: .5rem;
     margin-right: .5rem;
+    animation: card-appear 0.5s ease-in-out forwards;
 }
 
 .cardContainer {
@@ -278,7 +293,7 @@ body {
         }
     }
 
-    &__type{
+    &__type {
         //background-color: white;
 
         width: 30%;
@@ -311,3 +326,9 @@ body {
         transition: .1s;
     }
 }
+
+
+
+
+
+
