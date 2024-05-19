@@ -690,7 +690,7 @@ function renderCards(cards) {
                 <img src=./img/background.png>
                 <div class=cardContainer__text>
                     <div>${card.nombre}</div>
-                    <div>id:${card.id}</div>
+                    <div>${card.id}</div>
                 </div>
                 <img class=cardContainer__type src=${img}>
                 <button class="addButton button" id="addCardToDeckButton${card.id}">AGREGAR</button>
