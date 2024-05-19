@@ -746,12 +746,25 @@ function renderDeck() {
 }
 
 function filterByAndRender(cards) {
-    let typeButton = document.getElementById("tipo");
-    typeButton.addEventListener("click", () => {
+    let commonButton = document.getElementById("comunes");
+    let rareButton = document.getElementById("raras");
+    let epicButton = document.getElementById("epicas");
+    let legendaryButton = document.getElementById("legendarias");
+
+    legendaryButton.addEventListener("click", () => {
+        let typeCards = cards.filter(card => card.tipo === "Legendaria");
+        renderCards(typeCards);
+    });
+    epicButton.addEventListener("click", () => {
+        let typeCards = cards.filter(card => card.tipo === "Épica");
+        renderCards(typeCards);
+    });
+    rareButton.addEventListener("click", () => {
         let typeCards = cards.filter(card => card.tipo === "Rara");
-        // for (let i = 0; i < typeCards.length; i++) {
-        //     alert(typeCards[i].nombre);
-        // }
+        renderCards(typeCards);
+    });
+    commonButton.addEventListener("click", () => {
+        let typeCards = cards.filter(card => card.tipo === "Común");
         renderCards(typeCards);
     });
 }
