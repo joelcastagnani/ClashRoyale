@@ -617,6 +617,7 @@ function addCardToDeck(e, cards) {
             inDeck: true
         });
         cardToAdd.inDeck = true;
+        sendToast();
     } else {
         let element = document.getElementById("mainAlertContainer");
         element.innerHTML = "El mazo ya está lleno (máximo 8 cartas)";
@@ -744,7 +745,6 @@ function renderDeck() {
         }
     });
 }
-
 function filterByAndRender(cards) {
     let commonButton = document.getElementById("comunes");
     let rareButton = document.getElementById("raras");
@@ -768,6 +768,18 @@ function filterByAndRender(cards) {
         renderCards(typeCards);
     });
 }
-
+function sendToast(){
+    Toastify({
+        text: "Carta agregada al mazo correctamente",
+        duration: 1000,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "left", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "linear-gradient(to right, #00b09b, #96c93d)",
+        }
+      }).showToast();
+}
 mainFunction(cardsArray);
 
