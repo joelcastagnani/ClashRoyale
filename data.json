@@ -1,0 +1,497 @@
+[
+    {
+        "nombre": "Arquero Mágico",
+        "vida": 1100,
+        "daño": 176,
+        "id": 1,
+        "tipo": "Común",
+        "inDeck": false
+    },
+    {
+        "nombre": "Arqueras",
+        "vida": 700,
+        "daño": 90,
+        "id": 2,
+        "tipo": "Común",
+        "inDeck": false
+    },
+    {
+        "nombre": "Ballesta",
+        "vida": 2800,
+        "daño": 560,
+        "id": 3,
+        "tipo": "Común",
+        "inDeck": false
+    },
+    {
+        "nombre": "Torre Tesla",
+        "vida": 1300,
+        "daño": 110,
+        "id": 4,
+        "tipo": "Común",
+        "inDeck": false
+    },
+    {
+        "nombre": "Bárbaros",
+        "vida": 1700,
+        "daño": 80,
+        "id": 5,
+        "tipo": "Común",
+        "inDeck": false
+    },
+    {
+        "nombre": "Bebé Dragón",
+        "vida": 1150,
+        "daño": 130,
+        "id": 6,
+        "tipo": "Común",
+        "inDeck": false
+    },
+    {
+        "nombre": "Dragón Infernal",
+        "vida": 3000,
+        "daño": 120,
+        "id": 7,
+        "tipo": "Rara",
+        "inDeck": false
+    },
+    {
+        "nombre": "Bola de Fuego",
+        "vida": 0,
+        "daño": 490,
+        "id": 8,
+        "tipo": "Común",
+        "inDeck": false
+    },
+    {
+        "nombre": "Bola de Nieve",
+        "vida": 0,
+        "daño": 110,
+        "id": 9,
+        "tipo": "Común",
+        "inDeck": false
+    },
+    {
+        "nombre": "Rayo",
+        "vida": 0,
+        "daño": 520,
+        "id": 10,
+        "tipo": "Rara",
+        "inDeck": false
+    },
+    {
+        "nombre": "Bombardero",
+        "vida": 1400,
+        "daño": 220,
+        "id": 11,
+        "tipo": "Común",
+        "inDeck": false
+    },
+    {
+        "nombre": "Fantasma",
+        "vida": 1200,
+        "daño": 170,
+        "id": 12,
+        "tipo": "Rara",
+        "inDeck": false
+    },
+    {
+        "nombre": "Bruja",
+        "vida": 1300,
+        "daño": 90,
+        "id": 13,
+        "tipo": "Común",
+        "inDeck": false
+    },
+    {
+        "nombre": "Cañón",
+        "vida": 1100,
+        "daño": 110,
+        "id": 14,
+        "tipo": "Común",
+        "inDeck": false
+    },
+    {
+        "nombre": "Cañón con Ruedas",
+        "vida": 1800,
+        "daño": 140,
+        "id": 15,
+        "tipo": "Rara",
+        "inDeck": false
+    },
+    {
+        "nombre": "Ariete",
+        "vida": 4200,
+        "daño": 160,
+        "id": 16,
+        "tipo": "Épica",
+        "inDeck": false
+    },
+    {
+        "nombre": "Cazador",
+        "vida": 1500,
+        "daño": 150,
+        "id": 17,
+        "tipo": "Común",
+        "inDeck": false
+    },
+    {
+        "nombre": "Cementerio",
+        "vida": 0,
+        "daño": 110,
+        "id": 18,
+        "tipo": "Común",
+        "inDeck": false
+    },
+    {
+        "nombre": "Golem de Elixir",
+        "vida": 3000,
+        "daño": 90,
+        "id": 19,
+        "tipo": "Épica",
+        "inDeck": false
+    },
+    {
+        "nombre": "Horno",
+        "vida": 1300,
+        "daño": 110,
+        "id": 20,
+        "tipo": "Común",
+        "inDeck": false
+    },
+    {
+        "nombre": "Choza de Duendes",
+        "vida": 700,
+        "daño": 0,
+        "id": 21,
+        "tipo": "Común",
+        "inDeck": false
+    },
+    {
+        "nombre": "Clonación",
+        "vida": 0,
+        "daño": 0,
+        "id": 22,
+        "tipo": "Épica",
+        "inDeck": false
+    },
+    {
+        "nombre": "Cohete",
+        "vida": 0,
+        "daño": 490,
+        "id": 23,
+        "tipo": "Rara",
+        "inDeck": false
+    },
+    {
+        "nombre": "Descarga",
+        "vida": 0,
+        "daño": 500,
+        "id": 24,
+        "tipo": "Común",
+        "inDeck": false
+    },
+    {
+        "nombre": "Terremoto",
+        "vida": 0,
+        "daño": 280,
+        "id": 25,
+        "tipo": "Épica",
+        "inDeck": false
+    },
+    {
+        "nombre": "Duendes",
+        "vida": 190,
+        "daño": 50,
+        "id": 26,
+        "tipo": "Común",
+        "inDeck": false
+    },
+    {
+        "nombre": "Espíritu de Hielo",
+        "vida": 800,
+        "daño": 110,
+        "id": 27,
+        "tipo": "Común",
+        "inDeck": false
+    },
+    {
+        "nombre": "Espíritu Sanador",
+        "vida": 450,
+        "daño": 0,
+        "id": 28,
+        "tipo": "Común",
+        "inDeck": false
+    },
+    {
+        "nombre": "Esbirros",
+        "vida": 700,
+        "daño": 90,
+        "id": 29,
+        "tipo": "Común",
+        "inDeck": false
+    },
+    {
+        "nombre": "Espejo",
+        "vida": 0,
+        "daño": 0,
+        "id": 30,
+        "tipo": "Legendaria",
+        "inDeck": false
+    },
+    {
+        "nombre": "Esqueletos",
+        "vida": 130,
+        "daño": 40,
+        "id": 31,
+        "tipo": "Común",
+        "inDeck": false
+    },
+    {
+        "nombre": "Esqueleto Gigante",
+        "vida": 3000,
+        "daño": 170,
+        "id": 32,
+        "tipo": "Rara",
+        "inDeck": false
+    },
+    {
+        "nombre": "Verdugo",
+        "vida": 2300,
+        "daño": 170,
+        "tipo": "Épica",
+        "id": 33
+    },
+    {
+        "nombre": "Furia",
+        "vida": 0,
+        "daño": 0,
+        "id": 34,
+        "tipo": "Común",
+        "inDeck": false
+    },
+    {
+        "nombre": "Gigante",
+        "vida": 3000,
+        "daño": 170,
+        "id": 35,
+        "tipo": "Común",
+        "inDeck": false
+    },
+    {
+        "nombre": "Golem",
+        "vida": 4500,
+        "daño": 90,
+        "id": 36,
+        "tipo": "Épica",
+        "inDeck": false
+    },
+    {
+        "nombre": "Guardias",
+        "vida": 800,
+        "daño": 60,
+        "id": 37,
+        "tipo": "Común",
+        "inDeck": false
+    },
+    {
+        "nombre": "Pandilla",
+        "vida": 500,
+        "daño": 90,
+        "id": 38,
+        "tipo": "Común",
+        "inDeck": false
+    },
+    {
+        "nombre": "Lanzafuegos",
+        "vida": 1100,
+        "daño": 170,
+        "id": 39,
+        "tipo": "Común",
+        "inDeck": false
+    },
+    {
+        "nombre": "Leñador",
+        "vida": 2100,
+        "daño": 180,
+        "id": 40,
+        "tipo": "Rara",
+        "inDeck": false
+    },
+    {
+        "nombre": "Mago Eléctrico",
+        "vida": 1700,
+        "daño": 110,
+        "id": 41,
+        "tipo": "Común",
+        "inDeck": false
+    },
+    {
+        "nombre": "Máquina Voladora",
+        "vida": 1600,
+        "daño": 110,
+        "id": 42,
+        "tipo": "Épica",
+        "inDeck": false
+    },
+    {
+        "nombre": "Megacaballero",
+        "vida": 6100,
+        "daño": 350,
+        "id": 43,
+        "tipo": "Épica",
+        "inDeck": false
+    },
+    {
+        "nombre": "Megaesbirro",
+        "vida": 2000,
+        "daño": 170,
+        "id": 44,
+        "tipo": "Rara",
+        "inDeck": false
+    },
+    {
+        "nombre": "Minero",
+        "vida": 1400,
+        "daño": 170,
+        "id": 45,
+        "tipo": "Legendaria",
+        "inDeck": false
+    },
+    {
+        "nombre": "Veneno",
+        "vida": 0,
+        "daño": 140,
+        "id": 46,
+        "tipo": "Común",
+        "inDeck": false
+    },
+    {
+        "nombre": "Taladro",
+        "vida": 1800,
+        "daño": 170,
+        "id": 47,
+        "tipo": "Rara",
+        "inDeck": false
+    },
+    {
+        "nombre": "Monje",
+        "vida": 1800,
+        "daño": 140,
+        "id": 48,
+        "tipo": "Común",
+        "inDeck": false
+    },
+    {
+        "nombre": "Caballero Dorado",
+        "vida": 2800,
+        "daño": 170,
+        "id": 49,
+        "tipo": "Rara",
+        "inDeck": false
+    },
+    {
+        "nombre": "Mosquetera",
+        "vida": 1500,
+        "daño": 110,
+        "id": 50,
+        "tipo": "Común",
+        "inDeck": false
+    },
+    {
+        "nombre": "Reina Arquera",
+        "vida": 2500,
+        "daño": 170,
+        "id": 51,
+        "tipo": "Legendaria",
+        "inDeck": false
+    },
+    {
+        "nombre": "Mortero",
+        "vida": 1300,
+        "daño": 140,
+        "id": 52,
+        "tipo": "Común",
+        "inDeck": false
+    },
+    {
+        "nombre": "Murciélagos",
+        "vida": 500,
+        "daño": 90,
+        "id": 53,
+        "tipo": "Común",
+        "inDeck": false
+    },
+    {
+        "nombre": "Pescador",
+        "vida": 1800,
+        "daño": 110,
+        "id": 54,
+        "tipo": "Común",
+        "inDeck": false
+    },
+    {
+        "nombre": "Pekka",
+        "vida": 6300,
+        "daño": 350,
+        "id": 55,
+        "tipo": "Épica",
+        "inDeck": false
+    },
+    {
+        "nombre": "Príncipe",
+        "vida": 2600,
+        "daño": 270,
+        "id": 56,
+        "tipo": "Rara",
+        "inDeck": false
+    },
+    {
+        "nombre": "Rey Esqueleto",
+        "vida": 5000,
+        "daño": 170,
+        "id": 57,
+        "tipo": "Legendaria",
+        "inDeck": false
+    },
+    {
+        "nombre": "Sabueso de Lava",
+        "vida": 4800,
+        "daño": 110,
+        "id": 58,
+        "tipo": "Épica",
+        "inDeck": false
+    },
+    {
+        "nombre": "Tornado",
+        "vida": 0,
+        "daño": 0,
+        "id": 59,
+        "tipo": "Común",
+        "inDeck": false
+    },
+    {
+        "nombre": "Tronco",
+        "vida": 0,
+        "daño": 560,
+        "id": 60,
+        "tipo": "Común",
+        "inDeck": false
+    },
+    {
+        "nombre": "Valquiria",
+        "vida": 3000,
+        "daño": 170,
+        "id": 61,
+        "tipo": "Común",
+        "inDeck": false
+    },
+    {
+        "nombre": "Fénix",
+        "vida": 1750,
+        "daño": 110,
+        "id": 62,
+        "tipo": "Rara",
+        "inDeck": false
+    }
+]
