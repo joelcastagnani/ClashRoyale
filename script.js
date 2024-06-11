@@ -230,14 +230,6 @@ function sendToast(){
 
 mainFunction();
 
-// async function pedirInfo(){
-//     return new Promise()
-//     fetch("./data.json")
-//         .then(response => response.json())
-//         .then(cards => {
-//             return cards;
-//         })
-// }
 
 
 
